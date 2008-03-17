@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.GoogleMaps", "G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.GoogleMaps.Tests", "GoogleMaps\Tests\NoeticTools.GoogleMaps.Tests.csproj", "{3EFDDF88-C876-466B-A298-964D2822D198}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.RSS", "RSSReader\NoeticTools.RSS.csproj", "{651022FD-65D6-42A9-94A0-CB2FD16DEB63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools..RSS.Tests", "RSSReader\Tests\NoeticTools..RSS.Tests.csproj", "{1ED6E1F4-34E9-47A3-B1F6-06C908BDB487}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +65,14 @@ Global
 		{3EFDDF88-C876-466B-A298-964D2822D198}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EFDDF88-C876-466B-A298-964D2822D198}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EFDDF88-C876-466B-A298-964D2822D198}.Release|Any CPU.Build.0 = Release|Any CPU
+		{651022FD-65D6-42A9-94A0-CB2FD16DEB63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{651022FD-65D6-42A9-94A0-CB2FD16DEB63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{651022FD-65D6-42A9-94A0-CB2FD16DEB63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{651022FD-65D6-42A9-94A0-CB2FD16DEB63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ED6E1F4-34E9-47A3-B1F6-06C908BDB487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ED6E1F4-34E9-47A3-B1F6-06C908BDB487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ED6E1F4-34E9-47A3-B1F6-06C908BDB487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ED6E1F4-34E9-47A3-B1F6-06C908BDB487}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
