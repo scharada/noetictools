@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.NUnit.Extension
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.DotNetWrappers", "DotNetWrappers\NoeticTools.DotNetWrappers.csproj", "{C3508E69-CC5F-49E3-AAC4-E907DE04EC49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.GoogleMaps", "GoogleMaps\NoeticTools.GoogleMaps.csproj", "{99E84516-6A45-4C04-A7C3-E7958D99ED26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.GoogleMaps.Tests", "GoogleMaps\Tests\NoeticTools.GoogleMaps.Tests.csproj", "{3EFDDF88-C876-466B-A298-964D2822D198}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,14 @@ Global
 		{C3508E69-CC5F-49E3-AAC4-E907DE04EC49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3508E69-CC5F-49E3-AAC4-E907DE04EC49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3508E69-CC5F-49E3-AAC4-E907DE04EC49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99E84516-6A45-4C04-A7C3-E7958D99ED26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99E84516-6A45-4C04-A7C3-E7958D99ED26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99E84516-6A45-4C04-A7C3-E7958D99ED26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99E84516-6A45-4C04-A7C3-E7958D99ED26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EFDDF88-C876-466B-A298-964D2822D198}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EFDDF88-C876-466B-A298-964D2822D198}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EFDDF88-C876-466B-A298-964D2822D198}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EFDDF88-C876-466B-A298-964D2822D198}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
