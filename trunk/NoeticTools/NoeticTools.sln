@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.Windows.Forms", "Windows\Forms\NoeticTools.Windows.Forms.csproj", "{C99F3467-B989-4ED8-9600-29C3CC6FEF2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.PlugInService", "PlugInService\NoeticTools.PlugInService.csproj", "{72489AD7-32A6-4EA2-B133-4E45CA972C94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.PlugInService.Tests", "PlugInService\Tests\NoeticTools.PlugInService.Tests.csproj", "{4BB4CD77-C1F4-49BE-971C-B30CBB18E79C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.Html", "Html\NoeticTools.Html.csproj", "{C511E27B-F9F6-4376-8092-1B95B68BF670}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.Html.Tests", "Html\Tests\NoeticTools.Html.Tests.csproj", "{8CB9BEC2-EA6E-471F-8BD9-77B110E9B1C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.NUnit.Extensions", "NUnit.Extensions\NoeticTools.NUnit.Extensions.csproj", "{060AC4AA-2C1B-4EDF-805B-5B066DCE0572}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C99F3467-B989-4ED8-9600-29C3CC6FEF2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C99F3467-B989-4ED8-9600-29C3CC6FEF2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C99F3467-B989-4ED8-9600-29C3CC6FEF2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C99F3467-B989-4ED8-9600-29C3CC6FEF2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72489AD7-32A6-4EA2-B133-4E45CA972C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72489AD7-32A6-4EA2-B133-4E45CA972C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72489AD7-32A6-4EA2-B133-4E45CA972C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72489AD7-32A6-4EA2-B133-4E45CA972C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BB4CD77-C1F4-49BE-971C-B30CBB18E79C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BB4CD77-C1F4-49BE-971C-B30CBB18E79C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BB4CD77-C1F4-49BE-971C-B30CBB18E79C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BB4CD77-C1F4-49BE-971C-B30CBB18E79C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C511E27B-F9F6-4376-8092-1B95B68BF670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C511E27B-F9F6-4376-8092-1B95B68BF670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C511E27B-F9F6-4376-8092-1B95B68BF670}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C511E27B-F9F6-4376-8092-1B95B68BF670}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CB9BEC2-EA6E-471F-8BD9-77B110E9B1C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CB9BEC2-EA6E-471F-8BD9-77B110E9B1C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CB9BEC2-EA6E-471F-8BD9-77B110E9B1C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CB9BEC2-EA6E-471F-8BD9-77B110E9B1C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{060AC4AA-2C1B-4EDF-805B-5B066DCE0572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{060AC4AA-2C1B-4EDF-805B-5B066DCE0572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{060AC4AA-2C1B-4EDF-805B-5B066DCE0572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{060AC4AA-2C1B-4EDF-805B-5B066DCE0572}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
