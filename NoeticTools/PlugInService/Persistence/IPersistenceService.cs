@@ -20,6 +20,7 @@
 
 #endregion //Copyright
 
+
 namespace NoeticTools.PlugIns.Persistence
 {
 	public interface IPersistenceService
