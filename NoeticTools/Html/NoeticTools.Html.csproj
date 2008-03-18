@@ -41,7 +41,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\NoeticTools.BuildInfo\Properties\AssemblyInfo.cs">
+      <Link>AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="UI\HtmlView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +63,9 @@
       <Project>{651022FD-65D6-42A9-94A0-CB2FD16DEB63}</Project>
       <Name>NoeticTools.RSS</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

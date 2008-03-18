@@ -33,13 +33,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\NoeticTools.BuildInfo\Properties\AssemblyInfo.cs">
+      <Link>AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="HttpWebRequest.cs" />
     <Compile Include="HttpWebRequestFactory.cs" />
     <Compile Include="IHttpWebRequest.cs" />
     <Compile Include="IHttpWebRequestFactory.cs" />
     <Compile Include="IWebResponse.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebResponse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

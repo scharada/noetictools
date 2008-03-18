@@ -45,6 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\NoeticTools.BuildInfo\Properties\AssemblyInfo.cs">
+      <Link>AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="IOnOpenListener.cs" />
     <Compile Include="IPlugIn.cs" />
     <Compile Include="IPlugInHostServices.cs" />
@@ -60,13 +63,15 @@
     <Compile Include="PlugIn.cs" />
     <Compile Include="PlugInHost.cs" />
     <Compile Include="PlugInHostServices.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Windows\Forms\NoeticTools.Windows.Forms.csproj">
       <Project>{C99F3467-B989-4ED8-9600-29C3CC6FEF2D}</Project>
       <Name>NoeticTools.Windows.Forms</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
