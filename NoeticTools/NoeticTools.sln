@@ -2,24 +2,45 @@
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.Windows.Forms", "Windows\Forms\NoeticTools.Windows.Forms.csproj", "{C99F3467-B989-4ED8-9600-29C3CC6FEF2D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C687CD12-08C6-43E7-A231-AD956836C360} = {C687CD12-08C6-43E7-A231-AD956836C360}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.PlugInService", "PlugInService\NoeticTools.PlugInService.csproj", "{72489AD7-32A6-4EA2-B133-4E45CA972C94}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C687CD12-08C6-43E7-A231-AD956836C360} = {C687CD12-08C6-43E7-A231-AD956836C360}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.PlugInService.Tests", "PlugInService\Tests\NoeticTools.PlugInService.Tests.csproj", "{4BB4CD77-C1F4-49BE-971C-B30CBB18E79C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.Html", "Html\NoeticTools.Html.csproj", "{C511E27B-F9F6-4376-8092-1B95B68BF670}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C687CD12-08C6-43E7-A231-AD956836C360} = {C687CD12-08C6-43E7-A231-AD956836C360}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.Html.Tests", "Html\Tests\NoeticTools.Html.Tests.csproj", "{8CB9BEC2-EA6E-471F-8BD9-77B110E9B1C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.NUnit.Extensions", "NUnit.Extensions\NoeticTools.NUnit.Extensions.csproj", "{060AC4AA-2C1B-4EDF-805B-5B066DCE0572}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C687CD12-08C6-43E7-A231-AD956836C360} = {C687CD12-08C6-43E7-A231-AD956836C360}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.DotNetWrappers", "DotNetWrappers\NoeticTools.DotNetWrappers.csproj", "{C3508E69-CC5F-49E3-AAC4-E907DE04EC49}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C687CD12-08C6-43E7-A231-AD956836C360} = {C687CD12-08C6-43E7-A231-AD956836C360}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.GoogleMaps", "GoogleMaps\NoeticTools.GoogleMaps.csproj", "{99E84516-6A45-4C04-A7C3-E7958D99ED26}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C687CD12-08C6-43E7-A231-AD956836C360} = {C687CD12-08C6-43E7-A231-AD956836C360}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.GoogleMaps.Tests", "GoogleMaps\Tests\NoeticTools.GoogleMaps.Tests.csproj", "{3EFDDF88-C876-466B-A298-964D2822D198}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.RSS", "RSSReader\NoeticTools.RSS.csproj", "{651022FD-65D6-42A9-94A0-CB2FD16DEB63}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C687CD12-08C6-43E7-A231-AD956836C360} = {C687CD12-08C6-43E7-A231-AD956836C360}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools..RSS.Tests", "RSSReader\Tests\NoeticTools..RSS.Tests.csproj", "{1ED6E1F4-34E9-47A3-B1F6-06C908BDB487}"
 EndProject
