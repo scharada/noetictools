@@ -48,9 +48,12 @@
     <Compile Include="..\NoeticTools.BuildInfo\Properties\AssemblyInfo.cs">
       <Link>AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="IMenuBar.cs" />
     <Compile Include="IOnOpenListener.cs" />
     <Compile Include="IPlugIn.cs" />
     <Compile Include="IPlugInHostServices.cs" />
+    <Compile Include="IStatusBar.cs" />
+    <Compile Include="IToolBar.cs" />
     <Compile Include="IViewController.cs" />
     <Compile Include="Menus\IToolStripMenuService.cs" />
     <Compile Include="Menus\IViewFormMenuItem.cs" />
