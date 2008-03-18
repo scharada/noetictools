@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.RSS", "RSSReade
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools..RSS.Tests", "RSSReader\Tests\NoeticTools..RSS.Tests.csproj", "{1ED6E1F4-34E9-47A3-B1F6-06C908BDB487}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.BuildInfo", "NoeticTools.BuildInfo\NoeticTools.BuildInfo.csproj", "{C687CD12-08C6-43E7-A231-AD956836C360}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{1ED6E1F4-34E9-47A3-B1F6-06C908BDB487}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1ED6E1F4-34E9-47A3-B1F6-06C908BDB487}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1ED6E1F4-34E9-47A3-B1F6-06C908BDB487}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C687CD12-08C6-43E7-A231-AD956836C360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C687CD12-08C6-43E7-A231-AD956836C360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C687CD12-08C6-43E7-A231-AD956836C360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C687CD12-08C6-43E7-A231-AD956836C360}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
