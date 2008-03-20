@@ -20,10 +20,12 @@
 
 #endregion
 
+using NoeticTools.PlugIns.Menus;
+
 
 namespace NoeticTools.PlugIns
 {
-	public interface IMenuBar
+	public interface IMenuBar : IToolStripMenuService
 	{
 	}
 }
