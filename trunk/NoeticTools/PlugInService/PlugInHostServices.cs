@@ -23,6 +23,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using NoeticTools.PlugIns.Menus;
 using WeifenLuo.WinFormsUI.Docking;
 
 
@@ -35,16 +36,14 @@ namespace NoeticTools.PlugIns
 		private readonly List<IOnOpenListener> onOpenListeners = new List<IOnOpenListener>();
 		private readonly Dictionary<Type, object> services = new Dictionary<Type, object>();
 		private readonly IToolBar toolBar;
-		private readonly IMenuBar menuBar;
 		private readonly IStatusBar statusBar;
 
-		public PlugInHostServices(Form mainForm, DockPanel dockPanel, IToolBar toolBar, IMenuBar menuBar, IStatusBar statusBar)
+		public PlugInHostServices(Form mainForm, DockPanel dockPanel, IToolBar toolBar, IStatusBar statusBar)
 		{
 			mainForm.Load += mainForm_Load;
 			this.mainForm = mainForm;
 			this.dockPanel = dockPanel;
 			this.toolBar = toolBar;
-			this.menuBar = menuBar;
 			this.statusBar = statusBar;
 		}
 
@@ -69,9 +68,9 @@ namespace NoeticTools.PlugIns
 			get { return toolBar; }
 		}
 
-		public IMenuBar MenuBar
+		public IToolStripMenuService MenuBar
 		{
-			get { return menuBar; }
+			get { return GetService<IToolStripMenuService>(); }
 		}
 
 		public IStatusBar StatusBar

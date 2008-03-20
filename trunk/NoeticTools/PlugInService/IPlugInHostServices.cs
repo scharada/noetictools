@@ -20,6 +20,7 @@
 
 #endregion //Copyright
 
+using NoeticTools.PlugIns.Menus;
 using WeifenLuo.WinFormsUI.Docking;
 using System.Windows.Forms;
 
@@ -33,7 +34,7 @@ namespace NoeticTools.PlugIns
 		Form MainForm { get; }
 
 		IToolBar ToolBar { get; }
-		IMenuBar MenuBar { get; }
+		IToolStripMenuService MenuBar { get; }
 		IStatusBar StatusBar { get; }
 
 		void AddService<T>(T service);
