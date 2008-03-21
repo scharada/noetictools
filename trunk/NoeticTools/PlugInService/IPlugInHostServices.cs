@@ -37,6 +37,11 @@ namespace NoeticTools.PlugIns
 		IToolStripMenuService MenuBar { get; }
 		IStatusBar StatusBar { get; }
 
+		IOptionsView OptionsView
+		{
+			get;
+		}
+
 		void AddService<T>(T service);
 		T GetService<T>() where T : class;
 	}

@@ -20,11 +20,13 @@
 
 #endregion //Copyright
 
+using System.ComponentModel;
 using System.Windows.Forms;
 
 
 namespace NoeticTools.Windows.Forms
 {
+	[Category("NoeticTools")]
 	public partial class PlaceHolderControl : UserControl
 	{
 		public PlaceHolderControl()

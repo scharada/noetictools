@@ -32,11 +32,11 @@ namespace NoeticTools.PlugIns.Menus
 		private readonly ToolStripMenuItem viewMenu;
 		private bool viewShown = false;
 
-		public ViewFormMenuItem(string menuItemText, string menuItemName, IPlugInHostServices hostServices, IViewController viewController)
+		public ViewFormMenuItem(string menuItemText, IPlugInHostServices hostServices, IViewController viewController)
 		{
 			this.viewController = viewController;
 			IToolStripMenuService menusService = hostServices.GetService<IToolStripMenuService>();
-			viewMenu = menusService.AddMenuItem("viewMenu", menuItemText, menuItemName);
+			viewMenu = menusService.AddMenuItem("&View|" + menuItemText);
 
 			UpdateMenu();
 

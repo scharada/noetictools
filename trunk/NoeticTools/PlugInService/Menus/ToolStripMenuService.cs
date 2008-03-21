@@ -32,43 +32,35 @@ namespace NoeticTools.PlugIns.Menus
 		public ToolStripMenuService(MenuStrip menuStrip)
 		{
 			this.menuStrip = menuStrip;
-
-			AddSharedMenus();
 		}
 
-		private void AddSharedMenus()
+		public ToolStripMenuItem AddMenuItem(string menuPath)
 		{
-			AddMenuItem("", "&View", "viewMenu");
-		}
+			string[] menuItemNames = menuPath == string.Empty ? new string[0] : menuPath.Split('|');
 
-		public ToolStripMenuItem AddMenuItem(string parentMenuItemPath, string newItemText, string newItemName)
-		{
-			string[] menuItemNames = parentMenuItemPath == string.Empty ? new string[0] : parentMenuItemPath.Split('|');
-
-			ToolStripMenuItem parentMenuItem = null;
-			foreach (string name in menuItemNames)
+			ToolStripMenuItem menuItem = null;
+			foreach (string newItemText in menuItemNames)
 			{
-				ToolStripMenuItem menuItem;
+				string menuName = GetMenuNameFromText(newItemText);
 
-				if (menuStrip.Items.ContainsKey(menuItemNames[0]))
+				if (menuStrip.Items.ContainsKey(menuName))
 				{
-					menuItem = (ToolStripMenuItem) menuStrip.Items[menuItemNames[0]];
+					menuItem = (ToolStripMenuItem)menuStrip.Items[menuName];
 				}
 				else
 				{
-					menuItem = AddMenuItem(parentMenuItem, name, name);
+					menuItem = AddMenuItem(menuItem, newItemText);
 				}
 
-				parentMenuItem = menuItem;
 			}
 
-			return AddMenuItem(parentMenuItem, newItemText, newItemName);
+			return menuItem;
 		}
 
-		private ToolStripMenuItem AddMenuItem(ToolStripDropDownItem parentMenuItem, string newItemText, string newItemName)
+		private ToolStripMenuItem AddMenuItem(ToolStripDropDownItem parentMenuItem, string newItemText)
 		{
 			ToolStripMenuItem newMenuItem = new ToolStripMenuItem(newItemText);
-			newMenuItem.Name = newItemName;
+			newMenuItem.Name = GetMenuNameFromText(newItemText);
 
 			if (parentMenuItem == null)
 			{
@@ -80,6 +72,11 @@ namespace NoeticTools.PlugIns.Menus
 			}
 
 			return newMenuItem;
+		}
+
+		private string GetMenuNameFromText(string menuText)
+		{
+			return menuText.Replace("&", string.Empty).ToLower();
 		}
 
 		private void AddTopLevelMenu(ToolStripItem newMenuItem)

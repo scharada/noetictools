@@ -40,8 +40,14 @@ namespace NoeticTools.RSS
 			{
 				StringReader reader = new StringReader(incidentsXml);
 				XmlDocument document = new XmlDocument();
-				document.Load(reader);
-
+				try
+				{
+					document.Load(reader);
+				}
+				catch(XmlException)
+				{
+					document.RemoveAll();	// TODO: Better error handling
+				}
 				listener.OnRefresh(document);
 			}
 			else
