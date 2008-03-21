@@ -18,15 +18,15 @@
  * All Rights Reserved.
  *---------------------------------------------------------------------------*/
 
-#endregion //Copyright
+#endregion
 
-using System.Windows.Forms;
+using WeifenLuo.WinFormsUI.Docking;
 
 
-namespace NoeticTools.PlugIns.Menus
+namespace NoeticTools.PlugIns
 {
-	public interface IToolStripMenuService
+	public interface IOptionsView
 	{
-		ToolStripMenuItem AddMenuItem(string menuPath);
+		void Show(string context, string name, DockContent view);
 	}
 }

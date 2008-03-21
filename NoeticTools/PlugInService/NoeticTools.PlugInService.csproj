@@ -50,6 +50,7 @@
     </Compile>
     <Compile Include="IMenuBar.cs" />
     <Compile Include="IOnOpenListener.cs" />
+    <Compile Include="IOptionsView.cs" />
     <Compile Include="IPlugIn.cs" />
     <Compile Include="IPlugInHostServices.cs" />
     <Compile Include="IStatusBar.cs" />
