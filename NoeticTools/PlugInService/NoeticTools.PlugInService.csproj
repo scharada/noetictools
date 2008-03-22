@@ -61,18 +61,51 @@
     <Compile Include="Menus\ToolStripMenuService.cs" />
     <Compile Include="Menus\ToolStripMenuServicePlugIn.cs" />
     <Compile Include="Menus\ViewFormMenuItem.cs" />
+    <Compile Include="Options\OptionsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\OptionsView.Designer.cs">
+      <DependentUpon>OptionsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\OptionsViewPlugIn.cs" />
     <Compile Include="Persistence\IPersistenceService.cs" />
     <Compile Include="Persistence\PersistenceService.cs" />
     <Compile Include="Persistence\PersistenceServicePlugIn.cs" />
     <Compile Include="PlugIn.cs" />
     <Compile Include="PlugInHost.cs" />
     <Compile Include="PlugInHostServices.cs" />
+    <Compile Include="UI\ContentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ContentForm.Designer.cs">
+      <DependentUpon>ContentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HeaderPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\HeaderPanel.Designer.cs">
+      <DependentUpon>HeaderPanel.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Windows\Forms\NoeticTools.Windows.Forms.csproj">
       <Project>{C99F3467-B989-4ED8-9600-29C3CC6FEF2D}</Project>
       <Name>NoeticTools.Windows.Forms</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Options\OptionsView.resx">
+      <DependentUpon>OptionsView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ContentForm.resx">
+      <DependentUpon>ContentForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HeaderPanel.resx">
+      <DependentUpon>HeaderPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

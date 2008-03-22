@@ -20,11 +20,41 @@
 
 #endregion
 
+using System.Collections.Generic;
+using System.Windows.Forms;
+using NoeticTools.PlugIns.UI;
 
-namespace NoeticTools.PlugIns
+
+namespace NoeticTools.PlugIns.Options
 {
-	public interface IOptionsView
+	public partial class OptionsView : ContentForm
 	{
-		void AddProperties(object optionProperties);
+		private readonly PropertyGrid propertyGrid;
+		private readonly List<object> options;
+
+		public OptionsView()
+		{
+			InitializeComponent();
+		}
+
+		public OptionsView(List<object> options, PropertyGrid propertyGrid) : this()
+		{
+			this.options = options;
+			this.propertyGrid = propertyGrid;
+			ContentPlaceHolder.AddControl(propertyGrid);
+		}
+
+		private void OptionsView_Load(object sender, System.EventArgs e)
+		{
+			UpdateProperties();
+		}
+
+		private void UpdateProperties()
+		{
+			if (!DesignMode)
+			{
+				propertyGrid.SelectedObjects = options.ToArray();
+			}
+		}
 	}
 }
