@@ -20,11 +20,36 @@
 
 #endregion
 
+using System.ComponentModel;
+using NoeticTools.Windows.Forms;
+using WeifenLuo.WinFormsUI.Docking;
 
-namespace NoeticTools.PlugIns
+
+namespace NoeticTools.PlugIns.UI
 {
-	public interface IOptionsView
+	public partial class ContentForm : DockContent
 	{
-		void AddProperties(object optionProperties);
+		public ContentForm()
+		{
+			InitializeComponent();
+		}
+
+		[Category("Appearance")]
+		[DefaultValue("Header Text")]
+		public string HeaderText
+		{
+			get { return headerPanel.HeaderText; }
+			set { headerPanel.HeaderText = value; }
+		}
+
+		public PlaceHolderControl LegacyPlaceHolder
+		{
+			get { return headerPanel.LegacyRightPlaceHolder; }
+		}
+
+		protected PlaceHolderControl ContentPlaceHolder
+		{
+			get { return placeHolderControl; }
+		}
 	}
 }
