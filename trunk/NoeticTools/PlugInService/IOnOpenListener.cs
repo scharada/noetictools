@@ -25,6 +25,7 @@ namespace NoeticTools.PlugIns
 {
 	public interface IOnOpenListener
 	{
-		void OnOpen(IPlugInHostServices hostServices);
+		void OnOpen(IPluginHostServices hostServices);
+		void OnClosing();
 	}
 }

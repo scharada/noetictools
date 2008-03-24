@@ -30,22 +30,22 @@ namespace NoeticTools.PlugIns.Tests
 	[TestFixture]
 	public class PlugInHostTests : MockingTestFixture
 	{
-		private PlugInHost host;
-		private IPlugInHostServices hostServices;
+		private IPlugInHost host;
+		private IPluginHostServices hostServices;
 
 		protected override void SetUp()
 		{
-			hostServices = NewMock<IPlugInHostServices>();
+			hostServices = NewMock<IPluginHostServices>();
 			host = new PlugInHost(hostServices);
 		}
 
 		[Test]
 		public void Register_CallsAcceptOnThePlugIn()
 		{
-			IPlugIn plugIn = NewMock<IPlugIn>();
-			Expect.Once.On(plugIn).Method("Accept").With(hostServices);
+			IPlugin plugin = NewMock<IPlugin>();
+			Expect.Once.On(plugin).Method("Accept").With(hostServices);
 
-			host.Register(plugIn);
+			host.Register(plugin);
 		}
 	}
 }

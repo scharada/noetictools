@@ -18,26 +18,15 @@
  * All Rights Reserved.
  *---------------------------------------------------------------------------*/
 
-#endregion //Copyright
+#endregion
 
 
-namespace NoeticTools.PlugIns
+namespace NoeticTools.RSS
 {
-	public class PlugIn : IPlugIn
+	public interface IRSSReader
 	{
-		private readonly IPlugIn[] childPlugIns;
-
-		public PlugIn(params IPlugIn[] childPlugIns)
-		{
-			this.childPlugIns = childPlugIns;
-		}
-
-		public void Accept(IPlugInHostServices hostServices)
-		{
-			foreach (IPlugIn plugIn in childPlugIns)
-			{
-				plugIn.Accept(hostServices);
-			}
-		}
+		void Refresh();
+		void Start();
+		void Stop();
 	}
 }

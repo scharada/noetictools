@@ -27,7 +27,7 @@ using System.Windows.Forms;
 
 namespace NoeticTools.PlugIns
 {
-	public interface IPlugInHostServices
+	public interface IPluginHostServices
 	{
 		Form MainForm { get; }
 		IToolStripMenuService MenuBar { get; }

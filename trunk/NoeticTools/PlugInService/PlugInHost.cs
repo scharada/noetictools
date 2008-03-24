@@ -23,23 +23,26 @@
 
 namespace NoeticTools.PlugIns
 {
-	public class PlugInHost
+	public class PlugInHost : IPlugInHost
 	{
-		private readonly IPlugInHostServices services;
+		private readonly IPluginHostServices services;
 
-		public PlugInHost(IPlugInHostServices services, params IPlugIn[] plugins)
+		public PlugInHost(IPluginHostServices services)
 		{
 			this.services = services;
+		}
 
-			foreach (IPlugIn plugin in plugins)
+		void IPlugInHost.Register(IPlugin[] plugins)
+		{
+			foreach (IPlugin plugin in plugins)
 			{
-				Register(plugin);
+				((IPlugInHost)this).Register(plugin);
 			}
 		}
 
-		public void Register(IPlugIn plugIn)
+		void IPlugInHost.Register(IPlugin plugin)
 		{
-			plugIn.Accept(services);
+			plugin.Accept(services);
 		}
 	}
 }

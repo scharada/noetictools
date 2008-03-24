@@ -27,6 +27,6 @@ namespace NoeticTools.RSS
 {
 	public interface IRSSReaderFactory
 	{
-		RSSReader Create(IRSSReaderListener listener, TimeSpan updatePeriod, string url);
+		IRSSReader Create(IRSSReaderListener listener, TimeSpan updatePeriod, string url);
 	}
 }

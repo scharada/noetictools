@@ -29,7 +29,7 @@ using WeifenLuo.WinFormsUI.Docking;
 
 namespace NoeticTools.PlugIns
 {
-	public class PlugInHostServices : IPlugInHostServices
+	public class PlugInHostServices : IPluginHostServices
 	{
 		private readonly DockPanel dockPanel;
 		private readonly Form mainForm;
@@ -40,23 +40,24 @@ namespace NoeticTools.PlugIns
 		public PlugInHostServices(Form mainForm, DockPanel dockPanel, IOptionsView optionsView)
 		{
 			mainForm.Load += mainForm_Load;
+			mainForm.Closing += mainForm_Closing;
 			this.mainForm = mainForm;
 			this.dockPanel = dockPanel;
 			this.optionsView = optionsView;
 		}
 
-		public void AddOnOpenListener(IOnOpenListener listener)
+		void IPluginHostServices.AddOnOpenListener(IOnOpenListener listener)
 		{
 			onOpenListeners.Add(listener);
 		}
 
-		public void Show(DockContent view, DockState dockState)
+		void IPluginHostServices.Show(DockContent view, DockState dockState)
 		{
 			view.ShowHint = dockState;
 			view.Show(dockPanel);
 		}
 
-		public Form MainForm
+		Form IPluginHostServices.MainForm
 		{
 			get { return mainForm; }
 		}
@@ -92,6 +93,14 @@ namespace NoeticTools.PlugIns
 			foreach (IOnOpenListener openListener in onOpenListeners)
 			{
 				openListener.OnOpen(this);
+			}
+		}
+
+		private void mainForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+		{
+			foreach (IOnOpenListener openListener in onOpenListeners)
+			{
+				openListener.OnClosing();
 			}
 		}
 	}
