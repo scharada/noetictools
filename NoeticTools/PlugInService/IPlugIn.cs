@@ -23,8 +23,8 @@
 
 namespace NoeticTools.PlugIns
 {
-	public interface IPlugIn
+	public interface IPlugin
 	{
-		void Accept(IPlugInHostServices hostServices);
+		void Accept(IPluginHostServices hostServices);
 	}
 }

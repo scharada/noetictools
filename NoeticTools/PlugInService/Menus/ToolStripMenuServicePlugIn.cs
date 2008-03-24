@@ -25,7 +25,7 @@ using System.Windows.Forms;
 
 namespace NoeticTools.PlugIns.Menus
 {
-	public class ToolStripMenuServicePlugIn : IPlugIn
+	public class ToolStripMenuServicePlugIn : IPlugin
 	{
 		private readonly MenuStrip menuStrip;
 
@@ -34,7 +34,7 @@ namespace NoeticTools.PlugIns.Menus
 			this.menuStrip = menuStrip;
 		}
 
-		public void Accept(IPlugInHostServices hostServices)
+		public void Accept(IPluginHostServices hostServices)
 		{
 			ToolStripMenuService service = new ToolStripMenuService(menuStrip);
 			hostServices.AddService<IToolStripMenuService>(service);

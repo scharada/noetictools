@@ -30,14 +30,14 @@ using WeifenLuo.WinFormsUI.Docking;
 
 namespace NoeticTools.PlugIns.Options
 {
-	public class OptionsViewPlugIn : IPlugIn, IOptionsView
+	public class OptionsViewPlugIn : IPlugin, IOptionsView
 	{
 		private readonly List<object> options = new List<object>();
-		private IPlugInHostServices hostServices;
+		private IPluginHostServices hostServices;
 		private ToolStripMenuItem menuItem;
 		private DockContent optionsView;
 
-		void IPlugIn.Accept(IPlugInHostServices services)
+		void IPlugin.Accept(IPluginHostServices services)
 		{
 			hostServices = services;
 

@@ -52,6 +52,7 @@
     <Compile Include="IOnOpenListener.cs" />
     <Compile Include="IOptionsView.cs" />
     <Compile Include="IPlugIn.cs" />
+    <Compile Include="IPlugInHost.cs" />
     <Compile Include="IPlugInHostServices.cs" />
     <Compile Include="IStatusBar.cs" />
     <Compile Include="IToolBar.cs" />
@@ -71,7 +72,6 @@
     <Compile Include="Persistence\IPersistenceService.cs" />
     <Compile Include="Persistence\PersistenceService.cs" />
     <Compile Include="Persistence\PersistenceServicePlugIn.cs" />
-    <Compile Include="PlugIn.cs" />
     <Compile Include="PlugInHost.cs" />
     <Compile Include="PlugInHostServices.cs" />
     <Compile Include="UI\ContentForm.cs">

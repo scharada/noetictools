@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace NoeticTools.RSS
 {
-	public class RSSReader
+	public class RSSReader : IRSSReader
 	{
 		private readonly string url;
 		private readonly IRSSReaderListener listener;
@@ -28,10 +28,10 @@ namespace NoeticTools.RSS
 		private void updateTimer_Tick(object sender, System.EventArgs e)
 		{
 			updateTimer.Interval = updatePeriodInMilliseconds;
-			Refresh();
+			((IRSSReader)this).Refresh();
 		}
 
-		public void Refresh()
+		void IRSSReader.Refresh()
 		{
 			Extract scraper = new Extract();
 			string incidentsXml = scraper.GetPageContents(url);
@@ -56,9 +56,14 @@ namespace NoeticTools.RSS
 			}
 		}
 
-		public void Start()
+		void IRSSReader.Start()
 		{
 			updateTimer.Start();
+		}
+
+		void IRSSReader.Stop()
+		{
+			updateTimer.Stop();
 		}
 	}
 }

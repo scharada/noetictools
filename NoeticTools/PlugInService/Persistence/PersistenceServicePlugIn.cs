@@ -27,7 +27,7 @@ using NoeticTools.PlugIns.Persistence;
 
 namespace NoeticTools.PlugIns.Persistence
 {
-	public class PersistenceServicePlugIn : IPlugIn
+	public class PersistenceServicePlugIn : IPlugin
 	{
 		private readonly Assembly seedAssembly;
 
@@ -36,7 +36,7 @@ namespace NoeticTools.PlugIns.Persistence
 			this.seedAssembly = seedAssembly;
 		}
 
-		public void Accept(IPlugInHostServices hostServices)
+		public void Accept(IPluginHostServices hostServices)
 		{
 			PersistenceService persistenceService = new PersistenceService(hostServices.MainForm, seedAssembly);
 			hostServices.AddService <IPersistenceService>(persistenceService);

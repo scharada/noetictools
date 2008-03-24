@@ -28,7 +28,7 @@ namespace NoeticTools.RSS
 {
 	public class RSSReaderFactory : IRSSReaderFactory
 	{
-		public RSSReader Create(IRSSReaderListener listener, TimeSpan updatePeriod, string url)
+		public IRSSReader Create(IRSSReaderListener listener, TimeSpan updatePeriod, string url)
 		{
 			Timer timer = new Timer();
 			timer.Interval = (int) updatePeriod.TotalMilliseconds;
