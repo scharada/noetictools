@@ -29,19 +29,12 @@ namespace NoeticTools.PlugIns
 {
 	public interface IPlugInHostServices
 	{
+		Form MainForm { get; }
+		IToolStripMenuService MenuBar { get; }
+		IOptionsView OptionsView { get; }
+
 		void AddOnOpenListener(IOnOpenListener listener);
 		void Show(DockContent view, DockState dockState);
-		Form MainForm { get; }
-
-		IToolBar ToolBar { get; }
-		IToolStripMenuService MenuBar { get; }
-		IStatusBar StatusBar { get; }
-
-		IOptionsView OptionsView
-		{
-			get;
-		}
-
 		void AddService<T>(T service);
 		T GetService<T>() where T : class;
 	}

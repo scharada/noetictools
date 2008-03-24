@@ -20,6 +20,7 @@
 
 #endregion
 
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using NoeticTools.PlugIns.UI;
@@ -29,8 +30,8 @@ namespace NoeticTools.PlugIns.Options
 {
 	public partial class OptionsView : ContentForm
 	{
-		private readonly PropertyGrid propertyGrid;
 		private readonly List<object> options;
+		private readonly PropertyGrid propertyGrid;
 
 		public OptionsView()
 		{
@@ -44,7 +45,7 @@ namespace NoeticTools.PlugIns.Options
 			ContentPlaceHolder.AddControl(propertyGrid);
 		}
 
-		private void OptionsView_Load(object sender, System.EventArgs e)
+		private void OptionsView_Load(object sender, EventArgs e)
 		{
 			UpdateProperties();
 		}
