@@ -37,7 +37,7 @@ namespace NoeticTools.PlugIns.Options
 		private ToolStripMenuItem menuItem;
 		private DockContent optionsView;
 
-		public void Accept(IPlugInHostServices services)
+		void IPlugIn.Accept(IPlugInHostServices services)
 		{
 			hostServices = services;
 

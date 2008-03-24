@@ -35,17 +35,13 @@ namespace NoeticTools.PlugIns
 		private readonly Form mainForm;
 		private readonly List<IOnOpenListener> onOpenListeners = new List<IOnOpenListener>();
 		private readonly Dictionary<Type, object> services = new Dictionary<Type, object>();
-		private readonly IToolBar toolBar;
-		private readonly IStatusBar statusBar;
 		private readonly IOptionsView optionsView;
 
-		public PlugInHostServices(Form mainForm, DockPanel dockPanel, IToolBar toolBar, IStatusBar statusBar, IOptionsView optionsView)
+		public PlugInHostServices(Form mainForm, DockPanel dockPanel, IOptionsView optionsView)
 		{
 			mainForm.Load += mainForm_Load;
 			this.mainForm = mainForm;
 			this.dockPanel = dockPanel;
-			this.toolBar = toolBar;
-			this.statusBar = statusBar;
 			this.optionsView = optionsView;
 		}
 
@@ -65,19 +61,9 @@ namespace NoeticTools.PlugIns
 			get { return mainForm; }
 		}
 
-		public IToolBar ToolBar
-		{
-			get { return toolBar; }
-		}
-
 		public IToolStripMenuService MenuBar
 		{
 			get { return GetService<IToolStripMenuService>(); }
-		}
-
-		public IStatusBar StatusBar
-		{
-			get { return statusBar; }
 		}
 
 		public IOptionsView OptionsView
