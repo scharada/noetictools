@@ -30,7 +30,7 @@ namespace NoeticTools.PlugIns.Tests
 	[TestFixture]
 	public class PlugInHostTests : MockingTestFixture
 	{
-		private IPlugInHost host;
+		private IPluginHost host;
 		private IPluginHostServices hostServices;
 
 		protected override void SetUp()

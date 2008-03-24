@@ -59,5 +59,12 @@ namespace NoeticTools.Windows.Forms.Properties {
                 resourceCulture = value;
             }
         }
+        
+        internal static System.Drawing.Icon FireBell {
+            get {
+                object obj = ResourceManager.GetObject("FireBell", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }

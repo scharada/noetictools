@@ -20,13 +20,11 @@
 
 #endregion
 
-namespace NoeticTools.DotNetWrappers
-{
-	public interface IHttpWebRequest
-	{
-		int Timeout { get; set; }
-		string UserAgent { get; set; }
 
-		IWebResponse GetResponse();
+namespace NoeticTools.RSS
+{
+	public interface IRSSOptionsChangedListener
+	{
+		void OnOptionsChanged();
 	}
 }
