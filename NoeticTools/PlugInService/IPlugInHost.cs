@@ -1,6 +1,6 @@
 namespace NoeticTools.PlugIns
 {
-	public interface IPlugInHost
+	public interface IPluginHost
 	{
 		void Register(IPlugin plugin);
 		void Register(IPlugin[] plugins);

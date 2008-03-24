@@ -1,9 +1,7 @@
 using System;
 using System.IO;
 using System.Net;
-using CFAIncidentsReader.DependencyInjection;
 using NoeticTools.DotNetWrappers;
-using DotNetWrappers;
 
 
 namespace NoeticTools.RSS

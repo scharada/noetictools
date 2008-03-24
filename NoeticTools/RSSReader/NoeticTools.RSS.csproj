@@ -44,9 +44,11 @@
       <Link>AssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Extract.cs" />
+    <Compile Include="IRSSOptionsChangedListener.cs" />
     <Compile Include="IRSSReader.cs" />
     <Compile Include="IRSSReaderFactory.cs" />
     <Compile Include="IRSSReaderListener.cs" />
+    <Compile Include="IRSSReaderOptions.cs" />
     <Compile Include="RSSReader.cs" />
     <Compile Include="RSSReaderFactory.cs" />
   </ItemGroup>
