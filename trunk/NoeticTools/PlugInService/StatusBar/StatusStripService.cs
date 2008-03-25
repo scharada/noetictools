@@ -20,10 +20,23 @@
 
 #endregion
 
+using NoeticTools.DotNetWrappers;
 
-namespace NoeticTools.PlugIns
+
+namespace NoeticTools.PlugIns.StatusBar
 {
-	public interface IStatusBar
+	public class StatusStripService : IStatusStripService
 	{
+		private readonly IStatusStrip statusStrip;
+
+		public StatusStripService(IStatusStrip statusStrip)
+		{
+			this.statusStrip = statusStrip;
+		}
+
+		public void Add(ToolStripItem item)
+		{
+			statusStrip.Items.Add(item);
+		}
 	}
 }

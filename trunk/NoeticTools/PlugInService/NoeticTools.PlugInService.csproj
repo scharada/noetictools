@@ -54,7 +54,6 @@
     <Compile Include="IPlugIn.cs" />
     <Compile Include="IPlugInHost.cs" />
     <Compile Include="IPlugInHostServices.cs" />
-    <Compile Include="IStatusBar.cs" />
     <Compile Include="IToolBar.cs" />
     <Compile Include="IViewController.cs" />
     <Compile Include="Menus\IToolStripMenuService.cs" />
@@ -74,6 +73,9 @@
     <Compile Include="Persistence\PersistenceServicePlugIn.cs" />
     <Compile Include="PlugInHost.cs" />
     <Compile Include="PlugInHostServices.cs" />
+    <Compile Include="StatusBar\IStatusStripService.cs" />
+    <Compile Include="StatusBar\StatusStripPlugin.cs" />
+    <Compile Include="StatusBar\StatusStripService.cs" />
     <Compile Include="UI\ContentForm.cs">
       <SubType>Form</SubType>
     </Compile>

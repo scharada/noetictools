@@ -24,6 +24,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.Layout;
+using ToolStripItem=System.Windows.Forms.ToolStripItem;
 
 
 namespace NoeticTools.DotNetWrappers
@@ -282,7 +283,7 @@ namespace NoeticTools.DotNetWrappers
 			get { return toolStrip.VerticalScroll; }
 		}
 
-		public ToolStripItem GetNextItem(ToolStripItem start, ArrowDirection direction)
+		public System.Windows.Forms.ToolStripItem GetNextItem(ToolStripItem start, ArrowDirection direction)
 		{
 			return toolStrip.GetNextItem(start, direction);
 		}
@@ -297,16 +298,6 @@ namespace NoeticTools.DotNetWrappers
 			return toolStrip.GetChildAtPoint(pt, skipValue);
 		}
 
-		public ToolStripItem GetItemAt(int x, int y)
-		{
-			return toolStrip.GetItemAt(x, y);
-		}
-
-		public ToolStripItem GetItemAt(Point point)
-		{
-			return toolStrip.GetItemAt(point);
-		}
-
 		public void ResetMinimumSize()
 		{
 			toolStrip.ResetMinimumSize();
@@ -317,7 +308,7 @@ namespace NoeticTools.DotNetWrappers
 			toolStrip.SetAutoScrollMargin(x, y);
 		}
 
-		public string ToString()
+		public override string ToString()
 		{
 			return toolStrip.ToString();
 		}
