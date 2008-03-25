@@ -22,6 +22,7 @@
 
 using System.Windows.Forms;
 using NoeticTools.DotNetWrappers;
+using ToolStripItem=System.Windows.Forms.ToolStripItem;
 
 
 namespace NoeticTools.PlugIns.Menus
@@ -75,7 +76,7 @@ namespace NoeticTools.PlugIns.Menus
 			return newMenuItem;
 		}
 
-		private string GetMenuNameFromText(string menuText)
+		private static string GetMenuNameFromText(string menuText)
 		{
 			return menuText.Replace("&", string.Empty).ToLower();
 		}

@@ -52,11 +52,9 @@ namespace NoeticTools.DotNetWrappers
 		ToolStripTextDirection TextDirection { get; set; }
 		VScrollProperties VerticalScroll { get; }
 
-		ToolStripItem GetNextItem(ToolStripItem start, ArrowDirection direction);
+		System.Windows.Forms.ToolStripItem GetNextItem(ToolStripItem start, ArrowDirection direction);
 		Control GetChildAtPoint(Point point);
 		Control GetChildAtPoint(Point pt, GetChildAtPointSkip skipValue);
-		ToolStripItem GetItemAt(int x, int y);
-		ToolStripItem GetItemAt(Point point);
 		void ResetMinimumSize();
 		void SetAutoScrollMargin(int x, int y);
 		string ToString();
