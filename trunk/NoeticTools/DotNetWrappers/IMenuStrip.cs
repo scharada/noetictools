@@ -18,26 +18,19 @@
  * All Rights Reserved.
  *---------------------------------------------------------------------------*/
 
-#endregion //Copyright
+#endregion
 
-using NoeticTools.DotNetWrappers;
+using System;
+using System.Windows.Forms;
 
 
-namespace NoeticTools.PlugIns.Menus
+namespace NoeticTools.DotNetWrappers
 {
-	public class ToolStripMenuServicePlugIn : IPlugin
+	public interface IMenuStrip : IToolStrip
 	{
-		private readonly IMenuStrip menuStrip;
+		ToolStripMenuItem MdiWindowListItem { get; set; }
 
-		public ToolStripMenuServicePlugIn(IMenuStrip menuStrip)
-		{
-			this.menuStrip = menuStrip;
-		}
-
-		public void Accept(IPluginHostServices hostServices)
-		{
-			ToolStripMenuService service = new ToolStripMenuService(menuStrip);
-			hostServices.AddService<IToolStripMenuService>(service);
-		}
+		event EventHandler MenuActivate;
+		event EventHandler MenuDeactivate;
 	}
 }

@@ -88,6 +88,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DotNetWrappers\NoeticTools.DotNetWrappers.csproj">
+      <Project>{C3508E69-CC5F-49E3-AAC4-E907DE04EC49}</Project>
+      <Name>NoeticTools.DotNetWrappers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Windows\Forms\NoeticTools.Windows.Forms.csproj">
       <Project>{C99F3467-B989-4ED8-9600-29C3CC6FEF2D}</Project>
       <Name>NoeticTools.Windows.Forms</Name>

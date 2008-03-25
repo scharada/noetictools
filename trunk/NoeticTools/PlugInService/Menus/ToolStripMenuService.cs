@@ -21,15 +21,16 @@
 #endregion //Copyright
 
 using System.Windows.Forms;
+using NoeticTools.DotNetWrappers;
 
 
 namespace NoeticTools.PlugIns.Menus
 {
 	public class ToolStripMenuService : IToolStripMenuService
 	{
-		private readonly MenuStrip menuStrip;
+		private readonly IMenuStrip menuStrip;
 
-		public ToolStripMenuService(MenuStrip menuStrip)
+		public ToolStripMenuService(IMenuStrip menuStrip)
 		{
 			this.menuStrip = menuStrip;
 		}
