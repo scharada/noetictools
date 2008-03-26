@@ -32,7 +32,7 @@ namespace NoeticTools.PlugIns.Options
 {
 	public class OptionsViewPlugIn : IPlugin, IOptionsView
 	{
-		private readonly List<object> options = new List<object>();
+		private readonly List<IOptions> options = new List<IOptions>();
 		private IPluginHostServices hostServices;
 		private ToolStripMenuItem menuItem;
 		private DockContent optionsView;
@@ -45,7 +45,7 @@ namespace NoeticTools.PlugIns.Options
 			menuItem.Click += menuItem_Click;
 		}
 
-		public void AddProperties(object optionProperties)
+		void IOptionsView.AddProperties(IOptions optionProperties)
 		{
 			options.Add(optionProperties);
 		}
@@ -54,7 +54,7 @@ namespace NoeticTools.PlugIns.Options
 		{
 			if (optionsView == null)
 			{
-				OptionsView view = new OptionsView(options, new PropertyGrid());
+				OptionsView view = new OptionsView(options.ToArray(), new PropertyGrid());
 				view.Closed += view_Closed;
 
 				optionsView = view;

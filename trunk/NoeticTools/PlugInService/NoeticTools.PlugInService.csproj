@@ -61,6 +61,7 @@
     <Compile Include="Menus\ToolStripMenuService.cs" />
     <Compile Include="Menus\ToolStripMenuServicePlugIn.cs" />
     <Compile Include="Menus\ViewFormMenuItem.cs" />
+    <Compile Include="Options\IOptions.cs" />
     <Compile Include="Options\OptionsView.cs">
       <SubType>Form</SubType>
     </Compile>

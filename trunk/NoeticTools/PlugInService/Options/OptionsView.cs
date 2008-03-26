@@ -21,7 +21,6 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using NoeticTools.PlugIns.UI;
 
@@ -30,31 +29,58 @@ namespace NoeticTools.PlugIns.Options
 {
 	public partial class OptionsView : ContentForm
 	{
-		private readonly List<object> options;
+		private readonly IOptions[] options;
 		private readonly PropertyGrid propertyGrid;
+		private IOptions selectedOptions;
 
 		public OptionsView()
 		{
 			InitializeComponent();
 		}
 
-		public OptionsView(List<object> options, PropertyGrid propertyGrid) : this()
+		public OptionsView(IOptions[] options, PropertyGrid propertyGrid) : this()
 		{
 			this.options = options;
 			this.propertyGrid = propertyGrid;
-			ContentPlaceHolder.AddControl(propertyGrid);
+			splitContainer.Panel2.Controls.Add(propertyGrid);
+			propertyGrid.Dock = DockStyle.Fill;
 		}
 
 		private void OptionsView_Load(object sender, EventArgs e)
 		{
-			UpdateProperties();
+			pluginsListView.Clear();
+			foreach (IOptions option in options)
+			{
+				pluginsListView.Items.Add(option.OptionsName);
+			}
+
+			pluginsListView.SelectedIndexChanged += pluginsListView_SelectedIndexChanged;
+
+			if (options.Length > 0)
+			{
+				selectedOptions = options[0];
+				pluginsListView.Select();
+				pluginsListView.TopItem.Selected = true;
+			}
+		}
+
+		private void pluginsListView_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (pluginsListView.SelectedIndices.Count == 1)
+			{
+				selectedOptions = options[pluginsListView.SelectedIndices[0]];
+				UpdateProperties();
+			}
 		}
 
 		private void UpdateProperties()
 		{
 			if (!DesignMode)
 			{
-				propertyGrid.SelectedObjects = options.ToArray();
+				if (selectedOptions != null)
+				{
+					propertyGrid.SelectedObject = selectedOptions;
+				}
 			}
 		}
 	}
