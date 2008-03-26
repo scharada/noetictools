@@ -20,13 +20,11 @@
 
 #endregion //Copyright
 
-using System;
-
 
 namespace NoeticTools.RSS
 {
 	public interface IRSSReaderFactory
 	{
-		IRSSReader Create(IRSSReaderListener listener, TimeSpan updatePeriod, string url);
+		IRSSReader Create(IRSSReaderListener listener);
 	}
 }

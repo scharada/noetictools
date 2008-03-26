@@ -20,15 +20,11 @@
 
 #endregion
 
-using System;
 
-
-namespace NoeticTools.RSS
+namespace NoeticTools.PlugIns.Options
 {
-	public interface IRSSReader
+	public interface IOptions
 	{
-		void Refresh();
-		void Start(IRSSReaderOptions readerOptions);
-		void Stop();
+		string OptionsName { get; }
 	}
 }

@@ -20,20 +20,14 @@
 
 #endregion //Copyright
 
-using System;
-using System.Windows.Forms;
-
 
 namespace NoeticTools.RSS
 {
 	public class RSSReaderFactory : IRSSReaderFactory
 	{
-		public IRSSReader Create(IRSSReaderListener listener, TimeSpan updatePeriod, string url)
+		public IRSSReader Create(IRSSReaderListener listener)
 		{
-			Timer timer = new Timer();
-			timer.Interval = (int) updatePeriod.TotalMilliseconds;
-
-			return new RSSReader(listener, timer, url);
+			return new RSSReader(listener);
 		}
 	}
 }

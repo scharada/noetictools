@@ -20,11 +20,13 @@
 
 #endregion
 
+using NoeticTools.PlugIns.Options;
+
 
 namespace NoeticTools.PlugIns
 {
 	public interface IOptionsView
 	{
-		void AddProperties(object optionProperties);
+		void AddProperties(IOptions optionProperties);
 	}
 }
