@@ -89,6 +89,7 @@
     <Compile Include="UI\HeaderPanel.Designer.cs">
       <DependentUpon>HeaderPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\IErrorIndicator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DotNetWrappers\NoeticTools.DotNetWrappers.csproj">

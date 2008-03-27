@@ -27,7 +27,7 @@ using NoeticTools.Windows.Forms;
 
 namespace NoeticTools.PlugIns.UI
 {
-	public partial class HeaderPanel : UserControl
+	public partial class HeaderPanel : UserControl, IErrorIndicator
 	{
 		public HeaderPanel()
 		{
@@ -62,10 +62,19 @@ namespace NoeticTools.PlugIns.UI
 			get { return base.ForeColor; }
 			set { base.ForeColor = value; }
 		}
-
 		public PlaceHolderControl LegacyRightPlaceHolder
 		{
 			get { return rightPlaceHolder; }
+		}
+
+		void IErrorIndicator.ShowError(string text)
+		{
+			errorProvider.SetError(headerLabel, text);
+		}
+
+		void IErrorIndicator.ClearError()
+		{
+			errorProvider.Clear();
 		}
 	}
 }

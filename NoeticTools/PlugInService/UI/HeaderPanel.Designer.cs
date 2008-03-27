@@ -28,8 +28,11 @@ namespace NoeticTools.PlugIns.UI
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.rightPlaceHolder = new NoeticTools.Windows.Forms.PlaceHolderControl();
 			this.headerLabel = new System.Windows.Forms.Label();
+			this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// rightPlaceHolder
@@ -52,6 +55,10 @@ namespace NoeticTools.PlugIns.UI
 			this.headerLabel.TabIndex = 2;
 			this.headerLabel.Text = "Header Text";
 			// 
+			// errorProvider
+			// 
+			this.errorProvider.ContainerControl = this;
+			// 
 			// HeaderPanel
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -62,6 +69,7 @@ namespace NoeticTools.PlugIns.UI
 			this.Name = "HeaderPanel";
 			this.Padding = new System.Windows.Forms.Padding(10);
 			this.Size = new System.Drawing.Size(628, 45);
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -71,5 +79,6 @@ namespace NoeticTools.PlugIns.UI
 
 		private System.Windows.Forms.Label headerLabel;
 		private NoeticTools.Windows.Forms.PlaceHolderControl rightPlaceHolder;
+		private System.Windows.Forms.ErrorProvider errorProvider;
 	}
 }
