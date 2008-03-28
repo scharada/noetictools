@@ -24,7 +24,6 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.Layout;
-using ToolStripItem=System.Windows.Forms.ToolStripItem;
 
 
 namespace NoeticTools.DotNetWrappers
