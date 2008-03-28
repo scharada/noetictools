@@ -18,25 +18,22 @@
  * All Rights Reserved.
  *---------------------------------------------------------------------------*/
 
-#endregion //Copyright
+#endregion
 
-using NoeticTools.PlugIns.Menus;
-using WeifenLuo.WinFormsUI.Docking;
-using System.Windows.Forms;
+using NoeticTools.DotNetWrappers;
 
 
-namespace NoeticTools.PlugIns
+namespace NoeticTools.PlugIns.ToolBar
 {
-	public interface IPluginHostServices
+	public class ToolBarServicePlugin : IPlugin
 	{
-		Form MainForm { get; }
-		IToolStripMenuService MenuBar { get; }
-		IToolBar ToolBar { get; }
-		IOptionsView OptionsView { get; }
+		public ToolBarServicePlugin(IToolStrip toolStrip)
+		{}
 
-		void AddOnOpenListener(IOnOpenListener listener);
-		void Show(DockContent view, DockState dockState);
-		void AddService<T>(T service);
-		T GetService<T>() where T : class;
+		public void Accept(IPluginHostServices hostServices)
+		{
+			IToolBarService service = new ToolBarService();
+			hostServices.AddService<IToolBarService>(service);
+		}
 	}
 }

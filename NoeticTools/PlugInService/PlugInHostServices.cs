@@ -67,6 +67,11 @@ namespace NoeticTools.PlugIns
 			get { return GetService<IToolStripMenuService>(); }
 		}
 
+		public IToolBar ToolBar
+		{
+			get { return GetService<IToolBar>(); }
+		}
+
 		public IOptionsView OptionsView
 		{
 			get { return optionsView; }
