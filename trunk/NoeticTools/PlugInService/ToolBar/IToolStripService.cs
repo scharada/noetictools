@@ -7,6 +7,6 @@ namespace NoeticTools.PlugIns.ToolBar
 {
 	public interface IToolStripService
 	{
-		IToolStripButton AddButton(string text, Image image, EventHandler onClick, string toolTipText);
+		IToolStripButton AddButton(string buttonName, Image image, EventHandler onClick, string toolTipText);
 	}
 }

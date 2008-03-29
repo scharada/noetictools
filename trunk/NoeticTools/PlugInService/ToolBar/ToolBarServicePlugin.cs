@@ -20,6 +20,7 @@
 
 #endregion
 
+using System.Collections.Generic;
 using NoeticTools.DotNetWrappers;
 
 
@@ -28,15 +29,17 @@ namespace NoeticTools.PlugIns.ToolBar
 	public class ToolBarServicePlugin : IPlugin
 	{
 		private readonly IToolStrip toolStrip;
+		private readonly IEnumerable<string> menuOrdering;
 
-		public ToolBarServicePlugin(IToolStrip toolStrip)
+		public ToolBarServicePlugin(IToolStrip toolStrip, IEnumerable<string> menuOrdering)
 		{
 			this.toolStrip = toolStrip;
+			this.menuOrdering = menuOrdering;
 		}
 
 		public void Accept(IPluginHostServices hostServices)
 		{
-			IToolStripService service = new ToolBarService(toolStrip);
+			IToolStripService service = new ToolBarService(toolStrip, menuOrdering);
 			hostServices.AddService<IToolStripService>(service);
 		}
 	}

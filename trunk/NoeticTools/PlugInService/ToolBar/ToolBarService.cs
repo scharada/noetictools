@@ -21,30 +21,55 @@
 #endregion
 
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using NoeticTools.DotNetWrappers;
-using ToolStripButton=NoeticTools.DotNetWrappers.ToolStripButton;
+using ToolStripButton=System.Windows.Forms.ToolStripButton;
+using ToolStripItem=System.Windows.Forms.ToolStripItem;
 
 
 namespace NoeticTools.PlugIns.ToolBar
 {
 	public class ToolBarService : IToolStripService
 	{
+		private readonly List<string> menuOrdering = new List<string>();
 		private readonly IToolStrip toolStrip;
 
-		public ToolBarService(IToolStrip toolStrip)
+		public ToolBarService(IToolStrip toolStrip, IEnumerable<string> menuOrdering)
 		{
 			this.toolStrip = toolStrip;
+			this.menuOrdering.AddRange(menuOrdering);
 		}
 
-		IToolStripButton IToolStripService.AddButton(string text, Image image, EventHandler onClick, string toolTipText)
+		IToolStripButton IToolStripService.AddButton(string buttonName, Image image, EventHandler onClick, string toolTipText)
 		{
-			System.Windows.Forms.ToolStripButton button = new System.Windows.Forms.ToolStripButton(text, image);
+			ToolStripButton button = new ToolStripButton(buttonName, image);
 			button.DisplayStyle = ToolStripItemDisplayStyle.Image;
 			button.ToolTipText = toolTipText;
-			toolStrip.Items.Add(button);
-			return new ToolStripButton(button, onClick);
+			button.Name = buttonName.TrimEnd(new char[] {'.'});
+
+			int newButtonNameIndex = menuOrdering.IndexOf(GetNormalisedName(button));
+			for (int menuIndex = 0; menuIndex < toolStrip.Items.Count; menuIndex++)
+			{
+				int menuItemNameIndex = menuOrdering.IndexOf(GetNormalisedName(toolStrip.Items[menuIndex]));
+				if (menuItemNameIndex > newButtonNameIndex)
+				{
+					toolStrip.Items.Insert(menuIndex, button);
+					break;
+				}
+			}
+			if (!toolStrip.Items.Contains(button))
+			{
+				toolStrip.Items.Add(button);
+			}
+
+			return new DotNetWrappers.ToolStripButton(button, onClick);
+		}
+
+		private static string GetNormalisedName(ToolStripItem button)
+		{
+			return button.Name.Replace("&", string.Empty);
 		}
 	}
 }
