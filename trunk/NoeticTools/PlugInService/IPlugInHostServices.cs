@@ -21,6 +21,7 @@
 #endregion //Copyright
 
 using NoeticTools.PlugIns.Menus;
+using NoeticTools.PlugIns.ToolBar;
 using WeifenLuo.WinFormsUI.Docking;
 using System.Windows.Forms;
 
@@ -31,7 +32,7 @@ namespace NoeticTools.PlugIns
 	{
 		Form MainForm { get; }
 		IToolStripMenuService MenuBar { get; }
-		IToolBar ToolBar { get; }
+		IToolStripService ToolStrip { get; }
 		IOptionsView OptionsView { get; }
 
 		void AddOnOpenListener(IOnOpenListener listener);

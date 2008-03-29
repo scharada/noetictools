@@ -27,13 +27,17 @@ namespace NoeticTools.PlugIns.ToolBar
 {
 	public class ToolBarServicePlugin : IPlugin
 	{
+		private readonly IToolStrip toolStrip;
+
 		public ToolBarServicePlugin(IToolStrip toolStrip)
-		{}
+		{
+			this.toolStrip = toolStrip;
+		}
 
 		public void Accept(IPluginHostServices hostServices)
 		{
-			IToolBarService service = new ToolBarService();
-			hostServices.AddService<IToolBarService>(service);
+			IToolStripService service = new ToolBarService(toolStrip);
+			hostServices.AddService<IToolStripService>(service);
 		}
 	}
 }
