@@ -67,7 +67,6 @@
     <Compile Include="Options\OptionsView.Designer.cs">
       <DependentUpon>OptionsView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Options\OptionsViewPlugIn.cs" />
     <Compile Include="Persistence\IPersistenceService.cs" />
     <Compile Include="Persistence\PersistenceService.cs" />
     <Compile Include="Persistence\PersistenceServicePlugIn.cs" />
