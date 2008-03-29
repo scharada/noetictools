@@ -24,6 +24,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using NoeticTools.PlugIns.Menus;
+using NoeticTools.PlugIns.ToolBar;
 using WeifenLuo.WinFormsUI.Docking;
 
 
@@ -67,9 +68,9 @@ namespace NoeticTools.PlugIns
 			get { return GetService<IToolStripMenuService>(); }
 		}
 
-		public IToolBar ToolBar
+		public IToolStripService ToolStrip
 		{
-			get { return GetService<IToolBar>(); }
+			get { return GetService<IToolStripService>(); }
 		}
 
 		public IOptionsView OptionsView

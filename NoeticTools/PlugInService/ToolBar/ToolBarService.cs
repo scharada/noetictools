@@ -20,10 +20,31 @@
 
 #endregion
 
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+using NoeticTools.DotNetWrappers;
+using ToolStripButton=NoeticTools.DotNetWrappers.ToolStripButton;
+
 
 namespace NoeticTools.PlugIns.ToolBar
 {
-	public class ToolBarService : IToolBarService
+	public class ToolBarService : IToolStripService
 	{
+		private readonly IToolStrip toolStrip;
+
+		public ToolBarService(IToolStrip toolStrip)
+		{
+			this.toolStrip = toolStrip;
+		}
+
+		IToolStripButton IToolStripService.AddButton(string text, Image image, EventHandler onClick, string toolTipText)
+		{
+			System.Windows.Forms.ToolStripButton button = new System.Windows.Forms.ToolStripButton(text, image);
+			button.DisplayStyle = ToolStripItemDisplayStyle.Image;
+			button.ToolTipText = toolTipText;
+			toolStrip.Items.Add(button);
+			return new ToolStripButton(button, onClick);
+		}
 	}
 }

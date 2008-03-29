@@ -45,10 +45,12 @@
     <Compile Include="IMenuStrip.cs" />
     <Compile Include="IStatusStrip.cs" />
     <Compile Include="IToolStrip.cs" />
+    <Compile Include="IToolStripButton.cs" />
     <Compile Include="IWebResponse.cs" />
     <Compile Include="MenuStrip.cs" />
     <Compile Include="StatusStrip.cs" />
     <Compile Include="ToolStrip.cs" />
+    <Compile Include="ToolStripButton.cs" />
     <Compile Include="ToolStripItem.cs" />
     <Compile Include="ToolStripLabel.cs" />
     <Compile Include="WebResponse.cs" />
