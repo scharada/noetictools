@@ -26,6 +26,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using NoeticTools.DotNetWrappers;
 using ToolStripButton=System.Windows.Forms.ToolStripButton;
+using ToolStripComboBox=System.Windows.Forms.ToolStripComboBox;
 using ToolStripItem=System.Windows.Forms.ToolStripItem;
 
 
@@ -42,12 +43,12 @@ namespace NoeticTools.PlugIns.ToolBar
 			this.menuOrdering.AddRange(menuOrdering);
 		}
 
-		IToolStripButton IToolStripService.AddButton(string buttonName, Image image, EventHandler onClick, string toolTipText)
+		IToolStripButton IToolStripService.AddButton(string name, Image image, EventHandler onClick, string toolTipText)
 		{
-			ToolStripButton button = new ToolStripButton(buttonName, image);
+			ToolStripButton button = new ToolStripButton(name, image);
 			button.DisplayStyle = ToolStripItemDisplayStyle.Image;
 			button.ToolTipText = toolTipText;
-			button.Name = buttonName.TrimEnd(new char[] {'.'});
+			button.Name = name.TrimEnd(new char[] {'.'});
 
 			int newButtonNameIndex = menuOrdering.IndexOf(GetNormalisedName(button));
 			for (int menuIndex = 0; menuIndex < toolStrip.Items.Count; menuIndex++)
@@ -65,6 +66,13 @@ namespace NoeticTools.PlugIns.ToolBar
 			}
 
 			return new DotNetWrappers.ToolStripButton(button, onClick);
+		}
+
+		public IToolStripComboBox AddComboBox(string name)
+		{
+			ToolStripComboBox comboBox = new ToolStripComboBox(name);
+			toolStrip.Items.Add(comboBox);
+			return new DotNetWrappers.ToolStripComboBox(comboBox);
 		}
 
 		private static string GetNormalisedName(ToolStripItem button)
