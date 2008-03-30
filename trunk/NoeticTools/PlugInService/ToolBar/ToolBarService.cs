@@ -28,6 +28,7 @@ using NoeticTools.DotNetWrappers;
 using ToolStripButton=System.Windows.Forms.ToolStripButton;
 using ToolStripComboBox=System.Windows.Forms.ToolStripComboBox;
 using ToolStripItem=System.Windows.Forms.ToolStripItem;
+using ToolStripSeparator=NoeticTools.DotNetWrappers.ToolStripSeparator;
 
 
 namespace NoeticTools.PlugIns.ToolBar
@@ -68,11 +69,19 @@ namespace NoeticTools.PlugIns.ToolBar
 			return new DotNetWrappers.ToolStripButton(button, onClick);
 		}
 
-		public IToolStripComboBox AddComboBox(string name)
+		IToolStripComboBox IToolStripService.AddComboBox(string name)
 		{
 			ToolStripComboBox comboBox = new ToolStripComboBox(name);
 			toolStrip.Items.Add(comboBox);
 			return new DotNetWrappers.ToolStripComboBox(comboBox);
+		}
+
+		IToolStripSeparator IToolStripService.AddSeparator(string name)
+		{
+			System.Windows.Forms.ToolStripSeparator separator = new System.Windows.Forms.ToolStripSeparator();
+			separator.Name = name;
+			toolStrip.Items.Add(separator);
+			return new ToolStripSeparator(separator);
 		}
 
 		private static string GetNormalisedName(ToolStripItem button)
