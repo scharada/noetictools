@@ -47,6 +47,7 @@
     <Compile Include="IToolStrip.cs" />
     <Compile Include="IToolStripButton.cs" />
     <Compile Include="IToolStripComboBox.cs" />
+    <Compile Include="IToolStripSeparator.cs" />
     <Compile Include="IWebResponse.cs" />
     <Compile Include="MenuStrip.cs" />
     <Compile Include="StatusStrip.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="ToolStripComboBox.cs" />
     <Compile Include="ToolStripItem.cs" />
     <Compile Include="ToolStripLabel.cs" />
+    <Compile Include="ToolStripSeparator.cs" />
     <Compile Include="WebResponse.cs" />
   </ItemGroup>
   <ItemGroup>
