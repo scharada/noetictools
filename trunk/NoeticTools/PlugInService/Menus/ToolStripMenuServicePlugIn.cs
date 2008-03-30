@@ -34,7 +34,7 @@ namespace NoeticTools.PlugIns.Menus
 			this.menuStrip = menuStrip;
 		}
 
-		public void Accept(IPluginHostServices hostServices)
+		void IPlugin.Accept(IPluginHostServices hostServices)
 		{
 			ToolStripMenuService service = new ToolStripMenuService(menuStrip);
 			hostServices.AddService<IToolStripMenuService>(service);
