@@ -20,14 +20,23 @@
 
 #endregion //Copyright
 
+using NoeticTools.DotNetWrappers;
+
 
 namespace NoeticTools.RSS
 {
 	public class RSSReaderFactory : IRSSReaderFactory
 	{
+		private readonly IHttpWebRequestFactory webRequestFactory;
+
+		public RSSReaderFactory(IHttpWebRequestFactory webRequestFactory)
+		{
+			this.webRequestFactory = webRequestFactory;
+		}
+
 		public IRSSReader Create(IRSSReaderListener listener)
 		{
-			return new RSSReader(listener);
+			return new RSSReader(listener, webRequestFactory);
 		}
 	}
 }

@@ -79,5 +79,10 @@ namespace NoeticTools.Windows.Forms
 
 			messageRichTextBox.DeselectAll();
 		}
+
+		private void okButton_Click(object sender, EventArgs e)
+		{
+			Close();
+		}
 	}
 }

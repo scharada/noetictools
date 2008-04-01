@@ -24,6 +24,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml;
+using NoeticTools.DotNetWrappers;
 
 
 namespace NoeticTools.RSS
@@ -32,12 +33,14 @@ namespace NoeticTools.RSS
 	{
 		private readonly int firstUpdateDelayInMilliseconds = 500;
 		private readonly IRSSReaderListener listener;
+		private readonly IHttpWebRequestFactory webRequestFactory;
 		private readonly Timer updateTimer;
 		private IRSSReaderOptions options;
 
-		public RSSReader(IRSSReaderListener listener)
+		public RSSReader(IRSSReaderListener listener, IHttpWebRequestFactory webRequestFactory)
 		{
 			this.listener = listener;
+			this.webRequestFactory = webRequestFactory;
 
 			updateTimer = new Timer();
 			updateTimer.Tick += updateTimer_Tick;
@@ -45,7 +48,7 @@ namespace NoeticTools.RSS
 
 		void IRSSReader.Refresh()
 		{
-			Extract scraper = new Extract();
+			Extract scraper = new Extract(webRequestFactory);
 			string incidentsXml = scraper.GetPageContents(options.Url);
 
 			if (incidentsXml != string.Empty)

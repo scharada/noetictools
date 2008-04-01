@@ -96,10 +96,11 @@ namespace NoeticTools.Windows.Forms
 			// 
 			this.okButton.Location = new System.Drawing.Point(226, 9);
 			this.okButton.Name = "okButton";
-			this.okButton.Size = new System.Drawing.Size(75, 23);
+			this.okButton.Size = new System.Drawing.Size(75, 25);
 			this.okButton.TabIndex = 0;
 			this.okButton.Text = "OK";
 			this.okButton.UseVisualStyleBackColor = true;
+			this.okButton.Click += new System.EventHandler(this.okButton_Click);
 			// 
 			// ErrorForm
 			// 
