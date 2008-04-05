@@ -41,6 +41,7 @@ namespace NoeticTools.PlugIns.ToolBar
 		public ToolBarService(IToolStrip toolStrip, IEnumerable<string> menuOrdering)
 		{
 			this.toolStrip = toolStrip;
+			toolStrip.ImageScalingSize = new Size(16,16);
 			this.menuOrdering.AddRange(menuOrdering);
 		}
 
