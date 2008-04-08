@@ -22,9 +22,9 @@
 
 using System;
 using System.IO;
-using System.Windows.Forms;
 using System.Xml;
 using NoeticTools.DotNetWrappers;
+using Timer=NoeticTools.DotNetWrappers.Timer;
 
 
 namespace NoeticTools.RSS
@@ -42,7 +42,7 @@ namespace NoeticTools.RSS
 			this.listener = listener;
 			this.webRequestFactory = webRequestFactory;
 
-			updateTimer = new Timer();
+			updateTimer = new Timer(new System.Windows.Forms.Timer());
 			updateTimer.Tick += updateTimer_Tick;
 		}
 

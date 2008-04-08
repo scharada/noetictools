@@ -44,6 +44,7 @@
     <Compile Include="IHttpWebRequestFactory.cs" />
     <Compile Include="IMenuStrip.cs" />
     <Compile Include="IStatusStrip.cs" />
+    <Compile Include="ITimer.cs" />
     <Compile Include="IToolStrip.cs" />
     <Compile Include="IToolStripButton.cs" />
     <Compile Include="IToolStripComboBox.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="IWebResponse.cs" />
     <Compile Include="MenuStrip.cs" />
     <Compile Include="StatusStrip.cs" />
+    <Compile Include="Timer.cs" />
     <Compile Include="ToolStrip.cs" />
     <Compile Include="ToolStripButton.cs" />
     <Compile Include="ToolStripComboBox.cs" />
