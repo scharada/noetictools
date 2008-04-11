@@ -46,6 +46,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools..RSS.Tests", "R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.BuildInfo", "NoeticTools.BuildInfo\NoeticTools.BuildInfo.csproj", "{C687CD12-08C6-43E7-A231-AD956836C360}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.Utilities", "Utilities\NoeticTools.Utilities.csproj", "{9D26E490-FC24-40FD-84BB-D9310D504956}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.Utilities.Tests", "Utilities\Tests\NoeticTools.Utilities.Tests.csproj", "{E1A1FC15-D6BD-44AD-8EFB-82BC89981E96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +104,14 @@ Global
 		{C687CD12-08C6-43E7-A231-AD956836C360}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C687CD12-08C6-43E7-A231-AD956836C360}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C687CD12-08C6-43E7-A231-AD956836C360}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D26E490-FC24-40FD-84BB-D9310D504956}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D26E490-FC24-40FD-84BB-D9310D504956}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D26E490-FC24-40FD-84BB-D9310D504956}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D26E490-FC24-40FD-84BB-D9310D504956}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1A1FC15-D6BD-44AD-8EFB-82BC89981E96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1A1FC15-D6BD-44AD-8EFB-82BC89981E96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1A1FC15-D6BD-44AD-8EFB-82BC89981E96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1A1FC15-D6BD-44AD-8EFB-82BC89981E96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
