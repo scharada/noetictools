@@ -28,5 +28,6 @@ namespace NoeticTools.Utilities
 	public interface IScheduler
 	{
 		void Add(OnScheduledTickDelegate onScheduledEvent, TimeSpan period);
+		void Start();
 	}
 }

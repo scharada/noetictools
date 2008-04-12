@@ -210,7 +210,7 @@ namespace NoeticTools.DotNetWrappers
 			return comboBox.GetPreferredSize(constrainingSize);
 		}
 
-		public string ToString()
+		public override string ToString()
 		{
 			return comboBox.ToString();
 		}

@@ -22,6 +22,7 @@
 
 using System;
 using NMock2;
+using NoeticTools.DotNetWrappers;
 using NoeticTools.Utilities;
 using NUnit.Extensions;
 using NUnit.Framework;

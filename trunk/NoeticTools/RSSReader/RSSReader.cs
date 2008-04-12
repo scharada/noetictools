@@ -24,6 +24,7 @@ using System;
 using System.IO;
 using System.Xml;
 using NoeticTools.DotNetWrappers;
+using NoeticTools.Utilities;
 using Timer=NoeticTools.DotNetWrappers.Timer;
 
 
@@ -31,19 +32,17 @@ namespace NoeticTools.RSS
 {
 	public class RSSReader : IRSSReader
 	{
-		private readonly int firstUpdateDelayInMilliseconds = 500;
+		private readonly TimeSpan firstUpdateDelayInMilliseconds = TimeSpan.FromMilliseconds(500);
 		private readonly IRSSReaderListener listener;
+		private readonly IScheduler scheduler;
 		private readonly IHttpWebRequestFactory webRequestFactory;
-		private readonly Timer updateTimer;
 		private IRSSReaderOptions options;
 
-		public RSSReader(IRSSReaderListener listener, IHttpWebRequestFactory webRequestFactory)
+		public RSSReader(IRSSReaderListener listener, IHttpWebRequestFactory webRequestFactory, IScheduler scheduler)
 		{
 			this.listener = listener;
 			this.webRequestFactory = webRequestFactory;
-
-			updateTimer = new Timer(new System.Windows.Forms.Timer());
-			updateTimer.Tick += updateTimer_Tick;
+			this.scheduler = scheduler;
 		}
 
 		void IRSSReader.Refresh()
@@ -75,19 +74,17 @@ namespace NoeticTools.RSS
 		{
 			options = readerOptions;
 
-			updateTimer.Interval = firstUpdateDelayInMilliseconds;
-			updateTimer.Start();
+			scheduler.Add(Tick, firstUpdateDelayInMilliseconds);
+		}
+
+		private void Tick()
+		{
+			((IRSSReader)this).Refresh();
+			scheduler.Add(Tick, options.UpdatePeriod);
 		}
 
 		void IRSSReader.Stop()
 		{
-			updateTimer.Stop();
-		}
-
-		private void updateTimer_Tick(object sender, EventArgs e)
-		{
-			updateTimer.Interval = (int) options.UpdatePeriod.TotalMilliseconds;
-			((IRSSReader) this).Refresh();
 		}
 	}
 }

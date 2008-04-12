@@ -435,7 +435,7 @@ namespace NoeticTools.DotNetWrappers
 			toolStripItem.ResetTextDirection();
 		}
 
-		public string ToString()
+		public override string ToString()
 		{
 			return toolStripItem.ToString();
 		}
