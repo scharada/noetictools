@@ -21,6 +21,7 @@
 #endregion //Copyright
 
 using NoeticTools.DotNetWrappers;
+using NoeticTools.Utilities;
 
 
 namespace NoeticTools.RSS
@@ -28,15 +29,17 @@ namespace NoeticTools.RSS
 	public class RSSReaderFactory : IRSSReaderFactory
 	{
 		private readonly IHttpWebRequestFactory webRequestFactory;
+		private readonly IScheduler scheduler;
 
-		public RSSReaderFactory(IHttpWebRequestFactory webRequestFactory)
+		public RSSReaderFactory(IHttpWebRequestFactory webRequestFactory, IScheduler scheduler)
 		{
 			this.webRequestFactory = webRequestFactory;
+			this.scheduler = scheduler;
 		}
 
 		public IRSSReader Create(IRSSReaderListener listener)
 		{
-			return new RSSReader(listener, webRequestFactory);
+			return new RSSReader(listener, webRequestFactory, scheduler);
 		}
 	}
 }

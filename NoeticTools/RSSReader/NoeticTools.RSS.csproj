@@ -53,6 +53,12 @@
     <Compile Include="RSSReaderFactory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Utilities\NoeticTools.Utilities.csproj">
+      <Project>{9D26E490-FC24-40FD-84BB-D9310D504956}</Project>
+      <Name>NoeticTools.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
