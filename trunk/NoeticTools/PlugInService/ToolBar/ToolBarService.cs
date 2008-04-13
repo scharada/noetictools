@@ -25,9 +25,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using NoeticTools.DotNetWrappers;
-using ToolStripButton=System.Windows.Forms.ToolStripButton;
-using ToolStripComboBox=System.Windows.Forms.ToolStripComboBox;
-using ToolStripItem=System.Windows.Forms.ToolStripItem;
+using ToolStripButton = NoeticTools.DotNetWrappers.ToolStripButton;
+using ToolStripComboBox = NoeticTools.DotNetWrappers.ToolStripComboBox;
 using ToolStripSeparator=NoeticTools.DotNetWrappers.ToolStripSeparator;
 
 
@@ -47,7 +46,9 @@ namespace NoeticTools.PlugIns.ToolBar
 
 		IToolStripButton IToolStripService.AddButton(string name, Image image, EventHandler onClick, string toolTipText)
 		{
-			ToolStripButton button = new ToolStripButton(name, image);
+			IToolStripButton button = new ToolStripButton(new System.Windows.Forms.ToolStripButton(), onClick);
+			button.Text = name;
+			button.Image = image;
 			button.DisplayStyle = ToolStripItemDisplayStyle.Image;
 			button.ToolTipText = toolTipText;
 			button.Name = name.TrimEnd(new char[] {'.'});
@@ -67,25 +68,27 @@ namespace NoeticTools.PlugIns.ToolBar
 				toolStrip.Items.Add(button);
 			}
 
-			return new DotNetWrappers.ToolStripButton(button, onClick);
+			return button;
 		}
 
 		IToolStripComboBox IToolStripService.AddComboBox(string name)
 		{
-			ToolStripComboBox comboBox = new ToolStripComboBox(name);
+			IToolStripComboBox comboBox = new ToolStripComboBox(new System.Windows.Forms.ToolStripComboBox());
+			comboBox.Name = name;
+			comboBox.Text = name;
 			toolStrip.Items.Add(comboBox);
-			return new DotNetWrappers.ToolStripComboBox(comboBox);
+			return comboBox;
 		}
 
 		IToolStripSeparator IToolStripService.AddSeparator(string name)
 		{
-			System.Windows.Forms.ToolStripSeparator separator = new System.Windows.Forms.ToolStripSeparator();
+			IToolStripSeparator separator = new ToolStripSeparator(new System.Windows.Forms.ToolStripSeparator());
 			separator.Name = name;
 			toolStrip.Items.Add(separator);
-			return new ToolStripSeparator(separator);
+			return separator;
 		}
 
-		private static string GetNormalisedName(ToolStripItem button)
+		private static string GetNormalisedName(IToolStripItem button)
 		{
 			return button.Name.Replace("&", string.Empty);
 		}

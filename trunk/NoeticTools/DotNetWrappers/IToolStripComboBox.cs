@@ -22,19 +22,16 @@
 
 
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 
 namespace NoeticTools.DotNetWrappers
 {
-	public interface IToolStripComboBox
+	public interface IToolStripComboBox : IToolStripControlHost
 	{
 		AutoCompleteStringCollection AutoCompleteCustomSource { get; set; }
 		AutoCompleteMode AutoCompleteMode { get; set; }
 		AutoCompleteSource AutoCompleteSource { get; set; }
-		Image BackgroundImage { get; set; }
-		ImageLayout BackgroundImageLayout { get; set; }
 		ComboBox ComboBox { get; }
 		int DropDownHeight { get; set; }
 		ComboBoxStyle DropDownStyle { get; set; }
@@ -61,10 +58,7 @@ namespace NoeticTools.DotNetWrappers
 		int GetItemHeight(int index);
 		void Select(int start, int length);
 		void SelectAll();
-		Size GetPreferredSize(Size constrainingSize);
-		string ToString();
 
-		event EventHandler DoubleClick;
 		event EventHandler DropDown;
 		event EventHandler DropDownClosed;
 		event EventHandler DropDownStyleChanged;

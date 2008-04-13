@@ -31,9 +31,14 @@ namespace NoeticTools.DotNetWrappers
 		private readonly System.Windows.Forms.ToolStripLabel toolStripLabel;
 
 		public ToolStripLabel()
-			: base(new ToolStripStatusLabel())
+			: this(new ToolStripStatusLabel())
 		{
-			toolStripLabel = (ToolStripStatusLabel) toolStripItem;
+		}
+
+		private ToolStripLabel(System.Windows.Forms.ToolStripLabel toolStripLabel)
+			: base(toolStripLabel)
+		{
+			this.toolStripLabel = toolStripLabel;
 		}
 
 		public bool IsLink

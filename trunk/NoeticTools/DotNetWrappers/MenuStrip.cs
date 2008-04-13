@@ -21,7 +21,6 @@
 #endregion
 
 using System;
-using System.Windows.Forms;
 
 
 namespace NoeticTools.DotNetWrappers
@@ -35,10 +34,10 @@ namespace NoeticTools.DotNetWrappers
 			this.menuStrip = menuStrip;
 		}
 
-		public ToolStripMenuItem MdiWindowListItem
+		public IToolStripMenuItem MdiWindowListItem
 		{
-			get { return menuStrip.MdiWindowListItem; }
-			set { menuStrip.MdiWindowListItem = value; }
+			get { return new ToolStripMenuItem(menuStrip.MdiWindowListItem); }
+			set { menuStrip.MdiWindowListItem = (System.Windows.Forms.ToolStripMenuItem)value; }
 		}
 
 		public event EventHandler MenuActivate

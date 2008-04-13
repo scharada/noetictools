@@ -21,14 +21,13 @@
 #endregion
 
 using System;
-using System.Windows.Forms;
 
 
 namespace NoeticTools.DotNetWrappers
 {
 	public interface IMenuStrip : IToolStrip
 	{
-		ToolStripMenuItem MdiWindowListItem { get; set; }
+		IToolStripMenuItem MdiWindowListItem { get; set; }
 
 		event EventHandler MenuActivate;
 		event EventHandler MenuDeactivate;

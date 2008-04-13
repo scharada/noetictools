@@ -23,54 +23,22 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Windows.Forms.Layout;
 
 
 namespace NoeticTools.DotNetWrappers
 {
-	public class ToolStrip : IToolStrip
+	public class ToolStrip : ScrollableControl, IToolStrip
 	{
 		private readonly System.Windows.Forms.ToolStrip toolStrip;
 
-		public ToolStrip(System.Windows.Forms.ToolStrip toolStrip)
+		public ToolStrip(System.Windows.Forms.ToolStrip toolStrip) : base(toolStrip)
 		{
 			this.toolStrip = toolStrip;
 		}
 
-		public bool AutoSize
+		public static implicit operator System.Windows.Forms.ToolStrip (ToolStrip sourceToolStrip)
 		{
-			get { return toolStrip.AutoSize; }
-			set { toolStrip.AutoSize = value; }
-		}
-
-		public bool AutoScroll
-		{
-			get { return toolStrip.AutoScroll; }
-			set { toolStrip.AutoScroll = value; }
-		}
-
-		public Size AutoScrollMargin
-		{
-			get { return toolStrip.AutoScrollMargin; }
-			set { toolStrip.AutoScrollMargin = value; }
-		}
-
-		public Size AutoScrollMinSize
-		{
-			get { return toolStrip.AutoScrollMinSize; }
-			set { toolStrip.AutoScrollMinSize = value; }
-		}
-
-		public Point AutoScrollPosition
-		{
-			get { return toolStrip.AutoScrollPosition; }
-			set { toolStrip.AutoScrollPosition = value; }
-		}
-
-		public bool AllowDrop
-		{
-			get { return toolStrip.AllowDrop; }
-			set { toolStrip.AllowDrop = value; }
+			return sourceToolStrip.toolStrip;
 		}
 
 		public bool AllowItemReorder
@@ -85,74 +53,16 @@ namespace NoeticTools.DotNetWrappers
 			set { toolStrip.AllowMerge = value; }
 		}
 
-		public AnchorStyles Anchor
-		{
-			get { return toolStrip.Anchor; }
-			set { toolStrip.Anchor = value; }
-		}
-
-		public Color BackColor
-		{
-			get { return toolStrip.BackColor; }
-			set { toolStrip.BackColor = value; }
-		}
-
-		public BindingContext BindingContext
-		{
-			get { return toolStrip.BindingContext; }
-			set { toolStrip.BindingContext = value; }
-		}
-
 		public bool CanOverflow
 		{
 			get { return toolStrip.CanOverflow; }
 			set { toolStrip.CanOverflow = value; }
 		}
 
-		public bool CausesValidation
-		{
-			get { return toolStrip.CausesValidation; }
-			set { toolStrip.CausesValidation = value; }
-		}
-
-		public Control.ControlCollection Controls
-		{
-			get { return toolStrip.Controls; }
-		}
-
-		public Cursor Cursor
-		{
-			get { return toolStrip.Cursor; }
-			set { toolStrip.Cursor = value; }
-		}
-
-		public Font Font
-		{
-			get { return toolStrip.Font; }
-			set { toolStrip.Font = value; }
-		}
-
 		public ToolStripDropDownDirection DefaultDropDownDirection
 		{
 			get { return toolStrip.DefaultDropDownDirection; }
 			set { toolStrip.DefaultDropDownDirection = value; }
-		}
-
-		public DockStyle Dock
-		{
-			get { return toolStrip.Dock; }
-			set { toolStrip.Dock = value; }
-		}
-
-		public Rectangle DisplayRectangle
-		{
-			get { return toolStrip.DisplayRectangle; }
-		}
-
-		public Color ForeColor
-		{
-			get { return toolStrip.ForeColor; }
-			set { toolStrip.ForeColor = value; }
 		}
 
 		public ToolStripGripStyle GripStyle
@@ -177,16 +87,6 @@ namespace NoeticTools.DotNetWrappers
 			get { return toolStrip.GripRectangle; }
 		}
 
-		public bool HasChildren
-		{
-			get { return toolStrip.HasChildren; }
-		}
-
-		public HScrollProperties HorizontalScroll
-		{
-			get { return toolStrip.HorizontalScroll; }
-		}
-
 		public Size ImageScalingSize
 		{
 			get { return toolStrip.ImageScalingSize; }
@@ -204,9 +104,9 @@ namespace NoeticTools.DotNetWrappers
 			get { return toolStrip.IsCurrentlyDragging; }
 		}
 
-		public ToolStripItemCollection Items
+		public IToolStripItemCollection Items
 		{
-			get { return toolStrip.Items; }
+			get { return new ToolStripItemCollection(toolStrip.Items); }
 		}
 
 		public bool IsDropDown
@@ -224,11 +124,6 @@ namespace NoeticTools.DotNetWrappers
 		{
 			get { return toolStrip.LayoutStyle; }
 			set { toolStrip.LayoutStyle = value; }
-		}
-
-		public LayoutEngine LayoutEngine
-		{
-			get { return toolStrip.LayoutEngine; }
 		}
 
 		public ToolStripOverflowButton OverflowButton
@@ -265,21 +160,10 @@ namespace NoeticTools.DotNetWrappers
 			set { toolStrip.ShowItemToolTips = value; }
 		}
 
-		public bool TabStop
-		{
-			get { return toolStrip.TabStop; }
-			set { toolStrip.TabStop = value; }
-		}
-
 		public ToolStripTextDirection TextDirection
 		{
 			get { return toolStrip.TextDirection; }
 			set { toolStrip.TextDirection = value; }
-		}
-
-		public VScrollProperties VerticalScroll
-		{
-			get { return toolStrip.VerticalScroll; }
 		}
 
 		public System.Windows.Forms.ToolStripItem GetNextItem(ToolStripItem start, ArrowDirection direction)
@@ -287,35 +171,14 @@ namespace NoeticTools.DotNetWrappers
 			return toolStrip.GetNextItem(start, direction);
 		}
 
-		public Control GetChildAtPoint(Point point)
-		{
-			return toolStrip.GetChildAtPoint(point);
-		}
-
-		public Control GetChildAtPoint(Point pt, GetChildAtPointSkip skipValue)
-		{
-			return toolStrip.GetChildAtPoint(pt, skipValue);
-		}
-
 		public void ResetMinimumSize()
 		{
 			toolStrip.ResetMinimumSize();
 		}
 
-		public void SetAutoScrollMargin(int x, int y)
-		{
-			toolStrip.SetAutoScrollMargin(x, y);
-		}
-
 		public override string ToString()
 		{
 			return toolStrip.ToString();
-		}
-
-		public event EventHandler AutoSizeChanged
-		{
-			add { toolStrip.AutoSizeChanged += value; }
-			remove { toolStrip.AutoSizeChanged -= value; }
 		}
 
 		public event EventHandler BeginDrag
@@ -324,40 +187,10 @@ namespace NoeticTools.DotNetWrappers
 			remove { toolStrip.BeginDrag -= value; }
 		}
 
-		public event EventHandler CausesValidationChanged
-		{
-			add { toolStrip.CausesValidationChanged += value; }
-			remove { toolStrip.CausesValidationChanged -= value; }
-		}
-
-		public event ControlEventHandler ControlAdded
-		{
-			add { toolStrip.ControlAdded += value; }
-			remove { toolStrip.ControlAdded -= value; }
-		}
-
-		public event EventHandler CursorChanged
-		{
-			add { toolStrip.CursorChanged += value; }
-			remove { toolStrip.CursorChanged -= value; }
-		}
-
-		public event ControlEventHandler ControlRemoved
-		{
-			add { toolStrip.ControlRemoved += value; }
-			remove { toolStrip.ControlRemoved -= value; }
-		}
-
 		public event EventHandler EndDrag
 		{
 			add { toolStrip.EndDrag += value; }
 			remove { toolStrip.EndDrag -= value; }
-		}
-
-		public event EventHandler ForeColorChanged
-		{
-			add { toolStrip.ForeColorChanged += value; }
-			remove { toolStrip.ForeColorChanged -= value; }
 		}
 
 		public event ToolStripItemEventHandler ItemAdded

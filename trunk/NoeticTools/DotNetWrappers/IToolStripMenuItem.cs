@@ -20,14 +20,23 @@
 
 #endregion
 
-using System.Drawing;
+using System;
+using System.Windows.Forms;
 
 
 namespace NoeticTools.DotNetWrappers
 {
-	public interface IStatusStrip : IToolStrip
+	public interface IToolStripMenuItem : IToolStripDropDownItem
 	{
-		bool SizingGrip { get; set; }
-		Rectangle SizeGripBounds { get; }
+		bool Checked { get; set; }
+		bool CheckOnClick { get; set; }
+		CheckState CheckState { get; set; }
+		Keys ShortcutKeys { get; set; }
+		string ShortcutKeyDisplayString { get; set; }
+		bool ShowShortcutKeys { get; set; }
+		bool IsMdiWindowListEntry { get; }
+
+		event EventHandler CheckedChanged;
+		event EventHandler CheckStateChanged;
 	}
 }

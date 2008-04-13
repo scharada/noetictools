@@ -21,38 +21,27 @@
 #endregion
 
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 
 namespace NoeticTools.DotNetWrappers
 {
-	public class ToolStripButton : IToolStripButton
+	public class ToolStripButton : ToolStripItem, IToolStripButton
 	{
-		private readonly EventHandler onClickHandler;
+		private readonly EventHandler onClickHandler;	// TODO: Remove this as this class is a wrapper
 		private readonly System.Windows.Forms.ToolStripButton toolStripButton;
 
-		public ToolStripButton(System.Windows.Forms.ToolStripButton toolStripButton, EventHandler onClickHandler)
+		public ToolStripButton(System.Windows.Forms.ToolStripButton toolStripButton)
+			: base(toolStripButton)
 		{
 			this.toolStripButton = toolStripButton;
-			this.onClickHandler = onClickHandler;
 			toolStripButton.Click += onClick;
 		}
 
-		public Size GetPreferredSize(Size constrainingSize)
+		public ToolStripButton(System.Windows.Forms.ToolStripButton toolStripButton, EventHandler onClickHandler)
+			: this(toolStripButton)
 		{
-			return toolStripButton.GetPreferredSize(constrainingSize);
-		}
-
-		public bool AutoToolTip
-		{
-			get { return toolStripButton.AutoToolTip; }
-			set { toolStripButton.AutoToolTip = value; }
-		}
-
-		public bool CanSelect
-		{
-			get { return toolStripButton.CanSelect; }
+			this.onClickHandler = onClickHandler;
 		}
 
 		public bool CheckOnClick

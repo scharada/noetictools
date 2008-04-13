@@ -20,14 +20,25 @@
 
 #endregion
 
-using System.Drawing;
+using System;
+using System.Windows.Forms;
 
 
 namespace NoeticTools.DotNetWrappers
 {
-	public interface IStatusStrip : IToolStrip
+	public interface IToolStripDropDownItem : IToolStripItem
 	{
-		bool SizingGrip { get; set; }
-		Rectangle SizeGripBounds { get; }
+		ToolStripDropDown DropDown { get; set; }
+		ToolStripDropDownDirection DropDownDirection { get; set; }
+		IToolStripItemCollection DropDownItems { get; }
+		bool HasDropDownItems { get; }
+
+		void HideDropDown();
+		void ShowDropDown();
+
+		event EventHandler DropDownClosed;
+		event EventHandler DropDownOpening;
+		event EventHandler DropDownOpened;
+		event ToolStripItemClickedEventHandler DropDownItemClicked;
 	}
 }

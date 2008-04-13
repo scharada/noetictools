@@ -20,9 +20,7 @@
 
 #endregion //Copyright
 
-using System.Windows.Forms;
 using NoeticTools.DotNetWrappers;
-using ToolStripItem=System.Windows.Forms.ToolStripItem;
 
 
 namespace NoeticTools.PlugIns.Menus
@@ -36,18 +34,18 @@ namespace NoeticTools.PlugIns.Menus
 			this.menuStrip = menuStrip;
 		}
 
-		public ToolStripMenuItem AddMenuItem(string menuPath)
+		public IToolStripMenuItem AddMenuItem(string menuPath)
 		{
 			string[] menuItemNames = menuPath == string.Empty ? new string[0] : menuPath.Split('|');
 
-			ToolStripMenuItem menuItem = null;
+			IToolStripMenuItem menuItem = null;
 			foreach (string newItemText in menuItemNames)
 			{
 				string menuName = GetMenuNameFromText(newItemText);
 
 				if (menuStrip.Items.ContainsKey(menuName))
 				{
-					menuItem = (ToolStripMenuItem)menuStrip.Items[menuName];
+					menuItem = (IToolStripMenuItem)menuStrip.Items[menuName];
 				}
 				else
 				{
@@ -59,9 +57,10 @@ namespace NoeticTools.PlugIns.Menus
 			return menuItem;
 		}
 
-		private ToolStripMenuItem AddMenuItem(ToolStripDropDownItem parentMenuItem, string newItemText)
+		private IToolStripMenuItem AddMenuItem(IToolStripDropDownItem parentMenuItem, string newItemText)
 		{
-			ToolStripMenuItem newMenuItem = new ToolStripMenuItem(newItemText);
+			IToolStripMenuItem newMenuItem = new ToolStripMenuItem(new System.Windows.Forms.ToolStripMenuItem());
+			newMenuItem.Text = newItemText;
 			newMenuItem.Name = GetMenuNameFromText(newItemText);
 
 			if (parentMenuItem == null)
@@ -81,7 +80,7 @@ namespace NoeticTools.PlugIns.Menus
 			return menuText.Replace("&", string.Empty).ToLower();
 		}
 
-		private void AddTopLevelMenu(ToolStripItem newMenuItem)
+		private void AddTopLevelMenu(IToolStripItem newMenuItem)
 		{
 			int insertIndex = menuStrip.Items.IndexOfKey("windowsMenu");
 			if (insertIndex == -1)

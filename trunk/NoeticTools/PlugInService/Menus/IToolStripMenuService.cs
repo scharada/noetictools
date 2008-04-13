@@ -21,12 +21,13 @@
 #endregion //Copyright
 
 using System.Windows.Forms;
+using NoeticTools.DotNetWrappers;
 
 
 namespace NoeticTools.PlugIns.Menus
 {
 	public interface IToolStripMenuService
 	{
-		ToolStripMenuItem AddMenuItem(string menuPath);
+		IToolStripMenuItem AddMenuItem(string menuPath);
 	}
 }
