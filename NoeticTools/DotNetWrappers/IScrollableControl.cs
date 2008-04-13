@@ -21,13 +21,25 @@
 #endregion
 
 using System.Drawing;
+using System.Windows.Forms;
 
 
 namespace NoeticTools.DotNetWrappers
 {
-	public interface IStatusStrip : IToolStrip
+	public interface IScrollableControl : IControl
 	{
-		bool SizingGrip { get; set; }
-		Rectangle SizeGripBounds { get; }
+		bool AutoScroll { get; set; }
+		Size AutoScrollMargin { get; set; }
+		Point AutoScrollPosition { get; set; }
+		Size AutoScrollMinSize { get; set; }
+		HScrollProperties HorizontalScroll { get; }
+		VScrollProperties VerticalScroll { get; }
+
+		System.Windows.Forms.ScrollableControl.DockPaddingEdges DockPadding { get; }
+
+		void ScrollControlIntoView(IControl activeControl);
+		void SetAutoScrollMargin(int x, int y);
+
+		event ScrollEventHandler Scroll;
 	}
 }

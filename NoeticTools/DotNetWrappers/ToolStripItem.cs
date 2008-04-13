@@ -27,18 +27,18 @@ using System.Windows.Forms;
 
 namespace NoeticTools.DotNetWrappers
 {
-	public class ToolStripItem
+	public class ToolStripItem : Component, IToolStripItem
 	{
-		protected readonly System.Windows.Forms.ToolStripItem toolStripItem;
+		private readonly System.Windows.Forms.ToolStripItem toolStripItem;
 
-		public static implicit operator System.Windows.Forms.ToolStripItem(NoeticTools.DotNetWrappers.ToolStripItem item)
-		{
-			return item.toolStripItem;
-		}
-
-		public ToolStripItem(System.Windows.Forms.ToolStripItem toolStripItem)
+		public ToolStripItem(System.Windows.Forms.ToolStripItem toolStripItem) : base(toolStripItem)
 		{
 			this.toolStripItem = toolStripItem;
+		}
+
+		public static implicit operator System.Windows.Forms.ToolStripItem(ToolStripItem item)
+		{
+			return item.toolStripItem;
 		}
 
 		public string AccessibleDefaultActionDescription

@@ -28,6 +28,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -38,26 +39,41 @@
     <Compile Include="..\NoeticTools.BuildInfo\Properties\AssemblyInfo.cs">
       <Link>AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Component.cs" />
+    <Compile Include="Control.cs" />
     <Compile Include="HttpWebRequest.cs" />
     <Compile Include="HttpWebRequestFactory.cs" />
+    <Compile Include="IComponent.cs" />
+    <Compile Include="IControl.cs" />
     <Compile Include="IHttpWebRequest.cs" />
     <Compile Include="IHttpWebRequestFactory.cs" />
     <Compile Include="IMenuStrip.cs" />
+    <Compile Include="IScrollableControl.cs" />
     <Compile Include="IStatusStrip.cs" />
     <Compile Include="ITimer.cs" />
     <Compile Include="IToolStrip.cs" />
     <Compile Include="IToolStripButton.cs" />
     <Compile Include="IToolStripComboBox.cs" />
+    <Compile Include="IToolStripControlHost.cs" />
+    <Compile Include="IToolStripDropDownItem.cs" />
+    <Compile Include="IToolStripItem.cs" />
+    <Compile Include="IToolStripItemCollection.cs" />
+    <Compile Include="IToolStripMenuItem.cs" />
     <Compile Include="IToolStripSeparator.cs" />
     <Compile Include="IWebResponse.cs" />
     <Compile Include="MenuStrip.cs" />
+    <Compile Include="ScrollableControl.cs" />
     <Compile Include="StatusStrip.cs" />
     <Compile Include="Timer.cs" />
     <Compile Include="ToolStrip.cs" />
     <Compile Include="ToolStripButton.cs" />
     <Compile Include="ToolStripComboBox.cs" />
+    <Compile Include="ToolStripControlHost.cs" />
+    <Compile Include="ToolStripDropDownItem.cs" />
     <Compile Include="ToolStripItem.cs" />
+    <Compile Include="ToolStripItemCollection.cs" />
     <Compile Include="ToolStripLabel.cs" />
+    <Compile Include="ToolStripMenuItem.cs" />
     <Compile Include="ToolStripSeparator.cs" />
     <Compile Include="WebResponse.cs" />
   </ItemGroup>

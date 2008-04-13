@@ -20,14 +20,46 @@
 
 #endregion
 
-using System.Drawing;
+using System;
+using System.ComponentModel;
 
 
 namespace NoeticTools.DotNetWrappers
 {
-	public interface IStatusStrip : IToolStrip
+	public class Component : IComponent
 	{
-		bool SizingGrip { get; set; }
-		Rectangle SizeGripBounds { get; }
+		private readonly System.ComponentModel.Component component;
+
+		public Component(System.ComponentModel.Component component)
+		{
+			this.component = component;
+		}
+
+		public ISite Site
+		{
+			get { return component.Site; }
+			set { component.Site = value; }
+		}
+
+		public IContainer Container
+		{
+			get { return component.Container; }
+		}
+
+		public void Dispose()
+		{
+			component.Dispose();
+		}
+
+		public override string ToString()
+		{
+			return component.ToString();
+		}
+
+		public event EventHandler Disposed
+		{
+			add { component.Disposed += value; }
+			remove { component.Disposed -= value; }
+		}
 	}
 }

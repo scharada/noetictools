@@ -20,60 +20,10 @@
 
 #endregion
 
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-
 
 namespace NoeticTools.DotNetWrappers
 {
-	public interface IToolStripSeparator
+	public interface IToolStripSeparator : IToolStripItem
 	{
-		bool AutoToolTip { get; set; }
-
-		Image BackgroundImage { get; set; }
-
-		ImageLayout BackgroundImageLayout { get; set; }
-
-		bool CanSelect { get; }
-
-		bool DoubleClickEnabled { get; set; }
-
-		bool Enabled { get; set; }
-
-		ToolStripItemDisplayStyle DisplayStyle { get; set; }
-
-		Font Font { get; set; }
-
-		ContentAlignment ImageAlign { get; set; }
-
-		Image Image { get; set; }
-
-		int ImageIndex { get; set; }
-
-		string ImageKey { get; set; }
-
-		Color ImageTransparentColor { get; set; }
-
-		ToolStripItemImageScaling ImageScaling { get; set; }
-
-		string Text { get; set; }
-
-		ContentAlignment TextAlign { get; set; }
-
-		ToolStripTextDirection TextDirection { get; set; }
-
-		TextImageRelation TextImageRelation { get; set; }
-
-		string ToolTipText { get; set; }
-
-		bool RightToLeftAutoMirrorImage { get; set; }
-		Size GetPreferredSize(Size constrainingSize);
-
-		event EventHandler EnabledChanged;
-
-		event EventHandler DisplayStyleChanged;
-
-		event EventHandler TextChanged;
 	}
 }

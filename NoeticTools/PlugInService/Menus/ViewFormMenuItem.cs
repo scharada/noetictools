@@ -22,6 +22,7 @@
 
 using System;
 using System.Windows.Forms;
+using NoeticTools.DotNetWrappers;
 
 
 namespace NoeticTools.PlugIns.Menus
@@ -29,7 +30,7 @@ namespace NoeticTools.PlugIns.Menus
 	public class ViewFormMenuItem : IViewFormMenuItem
 	{
 		private readonly IViewController viewController;
-		private readonly ToolStripMenuItem viewMenu;
+		private readonly IToolStripMenuItem viewMenu;
 		private bool viewShown = false;
 
 		public ViewFormMenuItem(string menuItemText, IPluginHostServices hostServices, IViewController viewController)

@@ -20,14 +20,31 @@
 
 #endregion
 
+using System;
+using System.ComponentModel;
 using System.Drawing;
+using System.Windows.Forms;
 
 
 namespace NoeticTools.DotNetWrappers
 {
-	public interface IStatusStrip : IToolStrip
+	public interface IToolStripControlHost : IToolStripItem
 	{
-		bool SizingGrip { get; set; }
-		Rectangle SizeGripBounds { get; }
+		bool CausesValidation { get; set; }
+		ContentAlignment ControlAlign { get; set; }
+		System.Windows.Forms.Control Control { get; }
+		bool Focused { get; }
+
+		void Focus();
+
+		event EventHandler Enter;
+		event EventHandler GotFocus;
+		event EventHandler Leave;
+		event EventHandler LostFocus;
+		event KeyEventHandler KeyDown;
+		event KeyPressEventHandler KeyPress;
+		event KeyEventHandler KeyUp;
+		event CancelEventHandler Validating;
+		event EventHandler Validated;
 	}
 }

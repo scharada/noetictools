@@ -21,17 +21,17 @@
 #endregion
 
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 
 namespace NoeticTools.DotNetWrappers
 {
-	public class ToolStripComboBox : IToolStripComboBox
+	public class ToolStripComboBox : ToolStripControlHost, IToolStripComboBox
 	{
 		private readonly System.Windows.Forms.ToolStripComboBox comboBox;
 
 		public ToolStripComboBox(System.Windows.Forms.ToolStripComboBox comboBox)
+			: base(comboBox)
 		{
 			this.comboBox = comboBox;
 		}
@@ -52,18 +52,6 @@ namespace NoeticTools.DotNetWrappers
 		{
 			get { return comboBox.AutoCompleteSource; }
 			set { comboBox.AutoCompleteSource = value; }
-		}
-
-		public Image BackgroundImage
-		{
-			get { return comboBox.BackgroundImage; }
-			set { comboBox.BackgroundImage = value; }
-		}
-
-		public ImageLayout BackgroundImageLayout
-		{
-			get { return comboBox.BackgroundImageLayout; }
-			set { comboBox.BackgroundImageLayout = value; }
 		}
 
 		public ComboBox ComboBox
@@ -205,20 +193,9 @@ namespace NoeticTools.DotNetWrappers
 			comboBox.SelectAll();
 		}
 
-		public Size GetPreferredSize(Size constrainingSize)
-		{
-			return comboBox.GetPreferredSize(constrainingSize);
-		}
-
 		public override string ToString()
 		{
 			return comboBox.ToString();
-		}
-
-		public event EventHandler DoubleClick
-		{
-			add { comboBox.DoubleClick += value; }
-			remove { comboBox.DoubleClick -= value; }
 		}
 
 		public event EventHandler DropDown
