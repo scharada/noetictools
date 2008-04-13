@@ -33,9 +33,6 @@ namespace NoeticTools.DotNetWrappers
 		IToolStripItem this[string name] { get; }
 		bool IsReadOnly { get; }
 		int Count { get; }
-		bool IsFixedSize { get; }
-		object SyncRoot { get; }
-		bool IsSynchronized { get; }
 
 		System.Windows.Forms.ToolStripItem Add(string text);
 		System.Windows.Forms.ToolStripItem Add(Image image);
