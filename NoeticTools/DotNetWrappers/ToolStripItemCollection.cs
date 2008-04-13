@@ -57,21 +57,6 @@ namespace NoeticTools.DotNetWrappers
 			get { return collection.Count; }
 		}
 
-		public bool IsFixedSize
-		{
-			get { return ((IList) collection).IsFixedSize; }
-		}
-
-		public object SyncRoot
-		{
-			get { return ((ICollection) collection).SyncRoot; }
-		}
-
-		public bool IsSynchronized
-		{
-			get { return ((ICollection) collection).IsSynchronized; }
-		}
-
 		public System.Windows.Forms.ToolStripItem Add(string text)
 		{
 			return collection.Add(text);
@@ -170,12 +155,12 @@ namespace NoeticTools.DotNetWrappers
 
 		public void Clear()
 		{
-			((IList) collection).Clear();
+			collection.Clear();
 		}
 
 		public void RemoveAt(int index)
 		{
-			((IList) collection).RemoveAt(index);
+			collection.RemoveAt(index);
 		}
 
 		public void CopyTo(Array array, int index)
@@ -196,6 +181,7 @@ namespace NoeticTools.DotNetWrappers
 		private static IToolStripItem ToWrappedItemConverter(System.Windows.Forms.ToolStripItem sourceItem)
 		{
 			IToolStripItem wrappedItem;
+
 			if (sourceItem.GetType() == typeof(System.Windows.Forms.ToolStripMenuItem))
 			{
 				wrappedItem = new ToolStripMenuItem((System.Windows.Forms.ToolStripMenuItem)sourceItem);
