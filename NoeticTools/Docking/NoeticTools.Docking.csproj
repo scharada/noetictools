@@ -32,12 +32,86 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.1.2706.19617, Culture=neutral, PublicKeyToken=d481317c817cec47, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DockPanelSuite\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\NoeticTools.BuildInfo\Properties\AssemblyInfo.cs">
       <Link>AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="DockContentPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockContentPanel.Designer.cs">
+      <DependentUpon>DockContentPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingMdiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingMdiForm.Designer.cs">
+      <DependentUpon>DockingMdiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FlowLayoutDockingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FlowLayoutDockingForm.Designer.cs">
+      <DependentUpon>FlowLayoutDockingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FlowPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FlowPanel.Designer.cs">
+      <DependentUpon>FlowPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GroupPanel.Designer.cs">
+      <DependentUpon>GroupPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IContainerPanel.cs" />
+    <Compile Include="IDockContentPanel.cs" />
+    <Compile Include="IDockContentPanelListener.cs" />
+    <Compile Include="IDockingMdiForm.cs" />
+    <Compile Include="IDockPanel.cs" />
+    <Compile Include="IResizable.cs" />
+    <Compile Include="ParentPane.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DockContentPanel.resx">
+      <DependentUpon>DockContentPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingMdiForm.resx">
+      <DependentUpon>DockingMdiForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlowLayoutDockingForm.resx">
+      <DependentUpon>FlowLayoutDockingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlowPanel.resx">
+      <DependentUpon>FlowPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupPanel.resx">
+      <DependentUpon>GroupPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DotNetWrappers\NoeticTools.DotNetWrappers.csproj">
+      <Project>{C3508E69-CC5F-49E3-AAC4-E907DE04EC49}</Project>
+      <Name>NoeticTools.DotNetWrappers</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

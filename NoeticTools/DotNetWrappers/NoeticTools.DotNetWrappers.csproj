@@ -41,6 +41,8 @@
     </Compile>
     <Compile Include="Component.cs" />
     <Compile Include="Control.cs" />
+    <Compile Include="FlowLayoutPanel.cs">
+    </Compile>
     <Compile Include="HttpWebRequest.cs" />
     <Compile Include="HttpWebRequestFactory.cs" />
     <Compile Include="IComponent.cs" />
@@ -62,6 +64,7 @@
     <Compile Include="IToolStripSeparator.cs" />
     <Compile Include="IWebResponse.cs" />
     <Compile Include="MenuStrip.cs" />
+    <Compile Include="Panel.cs" />
     <Compile Include="ScrollableControl.cs" />
     <Compile Include="StatusStrip.cs" />
     <Compile Include="Timer.cs" />
