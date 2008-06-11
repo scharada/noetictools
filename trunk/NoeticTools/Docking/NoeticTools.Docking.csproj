@@ -4,11 +4,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{651022FD-65D6-42A9-94A0-CB2FD16DEB63}</ProjectGuid>
+    <ProjectGuid>{DC2F5B77-D5C3-4411-87E5-5F40EA80CE94}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NoeticTools.RSS</RootNamespace>
-    <AssemblyName>NoeticTools.RSS</AssemblyName>
+    <RootNamespace>NoeticTools.Docking</RootNamespace>
+    <AssemblyName>NoeticTools.Docking</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,31 +32,12 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\NoeticTools.BuildInfo\Properties\AssemblyInfo.cs">
       <Link>AssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Extract.cs" />
-    <Compile Include="IRSSOptionsChangedListener.cs" />
-    <Compile Include="IRSSReader.cs" />
-    <Compile Include="IRSSReaderFactory.cs" />
-    <Compile Include="IRSSReaderListener.cs" />
-    <Compile Include="IRSSReaderOptions.cs" />
-    <Compile Include="RSSReader.cs" />
-    <Compile Include="RSSReaderFactory.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DotNetWrappers\NoeticTools.DotNetWrappers.csproj">
-      <Project>{C3508E69-CC5F-49E3-AAC4-E907DE04EC49}</Project>
-      <Name>NoeticTools.DotNetWrappers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Utilities\NoeticTools.Utilities.csproj">
-      <Project>{9D26E490-FC24-40FD-84BB-D9310D504956}</Project>
-      <Name>NoeticTools.Utilities</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
