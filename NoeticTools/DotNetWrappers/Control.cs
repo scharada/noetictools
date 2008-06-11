@@ -605,16 +605,6 @@ namespace NoeticTools.DotNetWrappers
 			return control.PointToScreen(p);
 		}
 
-		public bool PreProcessMessage(ref Message msg)
-		{
-			return control.PreProcessMessage(ref msg);
-		}
-
-		public PreProcessControlState PreProcessControlMessage(ref Message msg)
-		{
-			return control.PreProcessControlMessage(ref msg);
-		}
-
 		public void ResetBackColor()
 		{
 			control.ResetBackColor();
@@ -1072,12 +1062,6 @@ namespace NoeticTools.DotNetWrappers
 		{
 			add { control.Move += value; }
 			remove { control.Move -= value; }
-		}
-
-		public event PreviewKeyDownEventHandler PreviewKeyDown
-		{
-			add { control.PreviewKeyDown += value; }
-			remove { control.PreviewKeyDown -= value; }
 		}
 
 		public event EventHandler Resize
