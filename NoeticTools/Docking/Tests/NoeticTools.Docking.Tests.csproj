@@ -4,17 +4,17 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{651022FD-65D6-42A9-94A0-CB2FD16DEB63}</ProjectGuid>
+    <ProjectGuid>{691C137A-E767-4971-BDD9-2F8911511752}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NoeticTools.RSS</RootNamespace>
-    <AssemblyName>NoeticTools.RSS</AssemblyName>
+    <RootNamespace>NoeticTools.Docking.Tests</RootNamespace>
+    <AssemblyName>Tests.NoeticTools.Docking</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\Bin\</OutputPath>
+    <OutputPath>..\..\Bin\Tests\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -23,43 +23,27 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\Bin\</OutputPath>
+    <OutputPath>..\..\Bin\Tests\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NMock2, Version=1.0.2313.18049, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\NMock2.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.1.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\NoeticTools.BuildInfo\Properties\AssemblyInfo.cs">
-      <Link>AssemblyInfo.cs</Link>
-    </Compile>
-    <Compile Include="Extract.cs" />
-    <Compile Include="IRSSOptionsChangedListener.cs" />
-    <Compile Include="IRSSReader.cs" />
-    <Compile Include="IRSSReaderFactory.cs" />
-    <Compile Include="IRSSReaderListener.cs" />
-    <Compile Include="IRSSReaderOptions.cs" />
-    <Compile Include="RSSReader.cs" />
-    <Compile Include="RSSReaderFactory.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DotNetWrappers\NoeticTools.DotNetWrappers.csproj">
-      <Project>{C3508E69-CC5F-49E3-AAC4-E907DE04EC49}</Project>
-      <Name>NoeticTools.DotNetWrappers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Utilities\NoeticTools.Utilities.csproj">
-      <Project>{9D26E490-FC24-40FD-84BB-D9310D504956}</Project>
-      <Name>NoeticTools.Utilities</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
