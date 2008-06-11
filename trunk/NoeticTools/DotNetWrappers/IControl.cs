@@ -32,149 +32,76 @@ namespace NoeticTools.DotNetWrappers
 	public interface IControl
 	{
 		AccessibleObject AccessibilityObject { get; }
-
 		string AccessibleDefaultActionDescription { get; set; }
-
 		string AccessibleDescription { get; set; }
-
 		string AccessibleName { get; set; }
-
 		AccessibleRole AccessibleRole { get; set; }
-
 		bool AllowDrop { get; set; }
-
 		AnchorStyles Anchor { get; set; }
-
 		bool AutoSize { get; set; }
-
 		Point AutoScrollOffset { get; set; }
-
 		LayoutEngine LayoutEngine { get; }
-
 		Color BackColor { get; set; }
-
 		Image BackgroundImage { get; set; }
-
 		ImageLayout BackgroundImageLayout { get; set; }
-
 		BindingContext BindingContext { get; set; }
-
 		int Bottom { get; }
-
 		Rectangle Bounds { get; set; }
-
 		bool CanFocus { get; }
-
 		bool CanSelect { get; }
-
 		bool Capture { get; set; }
-
 		bool CausesValidation { get; set; }
-
 		Rectangle ClientRectangle { get; }
-
 		Size ClientSize { get; set; }
-
 		string CompanyName { get; }
-
 		bool ContainsFocus { get; }
-
 		ContextMenu ContextMenu { get; set; }
-
 		ContextMenuStrip ContextMenuStrip { get; set; }
-
 		System.Windows.Forms.Control.ControlCollection Controls { get; }
-
 		bool Created { get; }
-
 		Cursor Cursor { get; set; }
-
 		ControlBindingsCollection DataBindings { get; }
-
 		Rectangle DisplayRectangle { get; }
-
 		bool IsDisposed { get; }
-
 		bool Disposing { get; }
-
 		DockStyle Dock { get; set; }
-
 		bool Enabled { get; set; }
-
 		bool Focused { get; }
-
 		Font Font { get; set; }
-
 		Color ForeColor { get; set; }
-
 		IntPtr Handle { get; }
-
 		bool HasChildren { get; }
-
 		int Height { get; set; }
-
 		bool IsHandleCreated { get; }
-
 		bool InvokeRequired { get; }
-
 		bool IsAccessible { get; set; }
-
 		bool IsMirrored { get; }
-
 		int Left { get; set; }
-
 		Point Location { get; set; }
-
 		Padding Margin { get; set; }
-
 		Size MaximumSize { get; set; }
-
 		Size MinimumSize { get; set; }
-
 		string Name { get; set; }
-
 		System.Windows.Forms.Control Parent { get; set; }
-
 		string ProductName { get; }
-
 		string ProductVersion { get; }
-
 		bool RecreatingHandle { get; }
-
 		Region Region { get; set; }
-
 		int Right { get; }
-
 		RightToLeft RightToLeft { get; set; }
-
 		ISite Site { get; set; }
-
 		Size Size { get; set; }
-
 		int TabIndex { get; set; }
-
 		bool TabStop { get; set; }
-
 		object Tag { get; set; }
-
 		string Text { get; set; }
-
 		int Top { get; set; }
-
 		System.Windows.Forms.Control TopLevelControl { get; }
-
 		bool UseWaitCursor { get; set; }
-
 		bool Visible { get; set; }
-
 		int Width { get; set; }
-
-		IWindowTarget WindowTarget { get; set; }
-
 		Size PreferredSize { get; }
-
 		Padding Padding { get; set; }
-
 		ImeMode ImeMode { get; set; }
 
 		void ResetBindings();
@@ -207,8 +134,6 @@ namespace NoeticTools.DotNetWrappers
 		void PerformLayout(System.Windows.Forms.Control affectedControl, string affectedProperty);
 		Point PointToClient(Point p);
 		Point PointToScreen(Point p);
-		bool PreProcessMessage(ref Message msg);
-		PreProcessControlState PreProcessControlMessage(ref Message msg);
 		void ResetBackColor();
 		void ResetCursor();
 		void ResetFont();
@@ -290,7 +215,6 @@ namespace NoeticTools.DotNetWrappers
 		event MouseEventHandler MouseUp;
 		event MouseEventHandler MouseWheel;
 		event EventHandler Move;
-		event PreviewKeyDownEventHandler PreviewKeyDown;
 		event EventHandler Resize;
 		event UICuesEventHandler ChangeUICues;
 		event EventHandler StyleChanged;
