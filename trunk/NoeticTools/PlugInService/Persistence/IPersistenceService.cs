@@ -27,6 +27,8 @@ namespace NoeticTools.PlugIns.Persistence
 	{
 		T RegisterScope<T>(string scopeName, PersistenceUpdateDelegate listener, T defaultValue)
 			where T : class;
+
+	    void UpdateAndSave();
 	}
 
 	public delegate object PersistenceUpdateDelegate();

@@ -38,7 +38,7 @@ namespace NoeticTools.PlugIns.Persistence
 
 		public void Accept(IPluginHostServices hostServices)
 		{
-			PersistenceService persistenceService = new PersistenceService(hostServices.MainForm, seedAssembly);
+			PersistenceService persistenceService = new PersistenceService(seedAssembly);
 			hostServices.AddService <IPersistenceService>(persistenceService);
 		}
 	}
