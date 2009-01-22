@@ -40,7 +40,7 @@ namespace NoeticTools.PlugIns.Persistence
 		private readonly string fullPath;
 		private readonly Scopes scopes = new Scopes();
 
-		public PersistenceService(Form mainForm, Assembly seedAssembly)
+		public PersistenceService(Assembly seedAssembly)
 		{
 			fullPath =
 				Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), appFolderName);
@@ -58,16 +58,9 @@ namespace NoeticTools.PlugIns.Persistence
 					form.ShowDialog();
 				}
 			}
-
-			mainForm.Closing += mainForm_Closing;
 		}
 
-		private void mainForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-		{
-			UpdateAndSave();
-		}
-
-		private void UpdateAndSave()
+		public void UpdateAndSave()
 		{
 			foreach (KeyValuePair<string, PersistenceUpdateDelegate> scopePair in scopeListeners)
 			{
