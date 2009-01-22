@@ -34,7 +34,7 @@ namespace NoeticTools.PlugIns.Persistence
 	public class PersistenceService : IPersistenceService
 	{
 		private readonly NXmlDocument xmlDocument = new NXmlDocument();
-		private const string appFolderName = "CFAReader";
+		private const string appFolderName = "VicFireReader";
 		private const string filename = "Config.xml";
 		private readonly Dictionary<string, PersistenceUpdateDelegate> scopeListeners = new Dictionary<string, PersistenceUpdateDelegate>();
 		private readonly string fullPath;
@@ -74,7 +74,7 @@ namespace NoeticTools.PlugIns.Persistence
 				object value = scopePair.Value();
 				scopes.UpdateScope(scopePair.Key, value);
 			}
-
+            
 			xmlDocument.Save(fullPath, scopes, null);
 		}
 
