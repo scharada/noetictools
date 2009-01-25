@@ -39,6 +39,7 @@
     <Compile Include="..\NoeticTools.BuildInfo\Properties\AssemblyInfo.cs">
       <Link>AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="IListControl.cs" />
     <Compile Include="Windows\Forms\ComboBox.cs" />
     <Compile Include="Component.cs" />
     <Compile Include="Control.cs" />

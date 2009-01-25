@@ -26,7 +26,7 @@ using System.Windows.Forms;
 
 namespace NoeticTools.DotNetWrappers
 {
-    public class ListControl : Control
+    public class ListControl : Control, IListControl
     {
         private readonly System.Windows.Forms.ListControl listControl;
 
