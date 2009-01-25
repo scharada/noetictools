@@ -39,6 +39,7 @@
     <Compile Include="..\NoeticTools.BuildInfo\Properties\AssemblyInfo.cs">
       <Link>AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Windows\Forms\ComboBox.cs" />
     <Compile Include="Component.cs" />
     <Compile Include="Control.cs" />
     <Compile Include="FlowLayoutPanel.cs">
@@ -63,6 +64,7 @@
     <Compile Include="IToolStripMenuItem.cs" />
     <Compile Include="IToolStripSeparator.cs" />
     <Compile Include="IWebResponse.cs" />
+    <Compile Include="ListControl.cs" />
     <Compile Include="MenuStrip.cs" />
     <Compile Include="Panel.cs" />
     <Compile Include="ScrollableControl.cs" />
