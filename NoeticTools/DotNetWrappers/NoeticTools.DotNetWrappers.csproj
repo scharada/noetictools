@@ -82,6 +82,7 @@
     <Compile Include="ToolStripMenuItem.cs" />
     <Compile Include="ToolStripSeparator.cs" />
     <Compile Include="WebResponse.cs" />
+    <Compile Include="Windows\Forms\IComboBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

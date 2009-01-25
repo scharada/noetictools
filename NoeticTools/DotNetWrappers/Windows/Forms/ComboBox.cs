@@ -24,7 +24,7 @@ using System.Windows.Forms;
 
 namespace NoeticTools.DotNetWrappers.Windows.Forms
 {
-    public class ComboBox : ListControl
+    public class ComboBox : ListControl, IComboBox
     {
         private readonly System.Windows.Forms.ComboBox comboBox;
 
