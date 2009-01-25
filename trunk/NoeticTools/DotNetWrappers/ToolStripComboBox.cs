@@ -22,6 +22,7 @@
 
 using System;
 using System.Windows.Forms;
+using ComboBox = System.Windows.Forms.ComboBox;
 
 
 namespace NoeticTools.DotNetWrappers
@@ -54,7 +55,7 @@ namespace NoeticTools.DotNetWrappers
 			set { comboBox.AutoCompleteSource = value; }
 		}
 
-		public ComboBox ComboBox
+        public System.Windows.Forms.ComboBox ComboBox
 		{
 			get { return comboBox.ComboBox; }
 		}
@@ -95,7 +96,7 @@ namespace NoeticTools.DotNetWrappers
 			set { comboBox.IntegralHeight = value; }
 		}
 
-		public ComboBox.ObjectCollection Items
+        public System.Windows.Forms.ComboBox.ObjectCollection Items
 		{
 			get { return comboBox.Items; }
 		}

@@ -21,8 +21,6 @@
 #endregion //Copyright
 
 using System.Reflection;
-using NoeticTools.PlugIns;
-using NoeticTools.PlugIns.Persistence;
 
 
 namespace NoeticTools.PlugIns.Persistence
