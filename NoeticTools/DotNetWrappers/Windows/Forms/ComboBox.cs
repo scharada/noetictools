@@ -19,8 +19,6 @@
 #endregion
 
 using System;
-using System.ComponentModel;
-using System.Runtime.Remoting;
 using System.Windows.Forms;
 
 
@@ -33,47 +31,6 @@ namespace NoeticTools.DotNetWrappers.Windows.Forms
         public ComboBox(System.Windows.Forms.ComboBox comboBox) : base(comboBox)
         {
             this.comboBox = comboBox;
-        }
-
-        public IContainer Container
-        {
-            get { return comboBox.Container; }
-        }
-
-        public string DisplayMember
-        {
-            get { return comboBox.DisplayMember; }
-            set { comboBox.DisplayMember = value; }
-        }
-
-        public IFormatProvider FormatInfo
-        {
-            get { return comboBox.FormatInfo; }
-            set { comboBox.FormatInfo = value; }
-        }
-
-        public string FormatString
-        {
-            get { return comboBox.FormatString; }
-            set { comboBox.FormatString = value; }
-        }
-
-        public bool FormattingEnabled
-        {
-            get { return comboBox.FormattingEnabled; }
-            set { comboBox.FormattingEnabled = value; }
-        }
-
-        public string ValueMember
-        {
-            get { return comboBox.ValueMember; }
-            set { comboBox.ValueMember = value; }
-        }
-
-        public object SelectedValue
-        {
-            get { return comboBox.SelectedValue; }
-            set { comboBox.SelectedValue = value; }
         }
 
         public AutoCompleteMode AutoCompleteMode
@@ -92,12 +49,6 @@ namespace NoeticTools.DotNetWrappers.Windows.Forms
         {
             get { return comboBox.AutoCompleteCustomSource; }
             set { comboBox.AutoCompleteCustomSource = value; }
-        }
-
-        public object DataSource
-        {
-            get { return comboBox.DataSource; }
-            set { comboBox.DataSource = value; }
         }
 
         public DrawMode DrawMode
@@ -164,12 +115,6 @@ namespace NoeticTools.DotNetWrappers.Windows.Forms
             get { return comboBox.PreferredHeight; }
         }
 
-        public int SelectedIndex
-        {
-            get { return comboBox.SelectedIndex; }
-            set { comboBox.SelectedIndex = value; }
-        }
-
         public object SelectedItem
         {
             get { return comboBox.SelectedItem; }
@@ -204,115 +149,6 @@ namespace NoeticTools.DotNetWrappers.Windows.Forms
         {
             get { return comboBox.DropDownStyle; }
             set { comboBox.DropDownStyle = value; }
-        }
-
-        public object GetLifetimeService()
-        {
-            return comboBox.GetLifetimeService();
-        }
-
-        public object InitializeLifetimeService()
-        {
-            return comboBox.InitializeLifetimeService();
-        }
-
-        public ObjRef CreateObjRef(Type requestedType)
-        {
-            return comboBox.CreateObjRef(requestedType);
-        }
-
-        public event EventHandler Disposed
-        {
-            add { comboBox.Disposed += value; }
-            remove { comboBox.Disposed -= value; }
-        }
-
-        public void Dispose()
-        {
-            comboBox.Dispose();
-        }
-
-        public void OnDragEnter(DragEventArgs e)
-        {
-            ((IDropTarget) comboBox).OnDragEnter(e);
-        }
-
-        public void OnDragLeave(EventArgs e)
-        {
-            ((IDropTarget) comboBox).OnDragLeave(e);
-        }
-
-        public void OnDragDrop(DragEventArgs e)
-        {
-            ((IDropTarget) comboBox).OnDragDrop(e);
-        }
-
-        public void OnDragOver(DragEventArgs e)
-        {
-            ((IDropTarget) comboBox).OnDragOver(e);
-        }
-
-        public bool PreProcessMessage(ref Message msg)
-        {
-            return comboBox.PreProcessMessage(ref msg);
-        }
-
-        public PreProcessControlState PreProcessControlMessage(ref Message msg)
-        {
-            return comboBox.PreProcessControlMessage(ref msg);
-        }
-
-        public event EventHandler DataSourceChanged
-        {
-            add { comboBox.DataSourceChanged += value; }
-            remove { comboBox.DataSourceChanged -= value; }
-        }
-
-        public event EventHandler DisplayMemberChanged
-        {
-            add { comboBox.DisplayMemberChanged += value; }
-            remove { comboBox.DisplayMemberChanged -= value; }
-        }
-
-        public event ListControlConvertEventHandler Format
-        {
-            add { comboBox.Format += value; }
-            remove { comboBox.Format -= value; }
-        }
-
-        public event EventHandler FormatInfoChanged
-        {
-            add { comboBox.FormatInfoChanged += value; }
-            remove { comboBox.FormatInfoChanged -= value; }
-        }
-
-        public event EventHandler FormatStringChanged
-        {
-            add { comboBox.FormatStringChanged += value; }
-            remove { comboBox.FormatStringChanged -= value; }
-        }
-
-        public event EventHandler FormattingEnabledChanged
-        {
-            add { comboBox.FormattingEnabledChanged += value; }
-            remove { comboBox.FormattingEnabledChanged -= value; }
-        }
-
-        public event EventHandler ValueMemberChanged
-        {
-            add { comboBox.ValueMemberChanged += value; }
-            remove { comboBox.ValueMemberChanged -= value; }
-        }
-
-        public event EventHandler SelectedValueChanged
-        {
-            add { comboBox.SelectedValueChanged += value; }
-            remove { comboBox.SelectedValueChanged -= value; }
-        }
-
-        public string GetItemText(object item)
-        {
-            return comboBox.GetItemText(item);
         }
 
         public event DrawItemEventHandler DrawItem
