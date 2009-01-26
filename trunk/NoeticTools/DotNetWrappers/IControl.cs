@@ -104,6 +104,8 @@ namespace NoeticTools.DotNetWrappers
 		Padding Padding { get; set; }
 		ImeMode ImeMode { get; set; }
 
+        System.Windows.Forms.Control WrappedControl { get; }
+
 		void ResetBindings();
 		Size GetPreferredSize(Size proposedSize);
 		IAsyncResult BeginInvoke(Delegate method);

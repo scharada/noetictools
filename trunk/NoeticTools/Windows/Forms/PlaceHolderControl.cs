@@ -22,6 +22,8 @@
 
 using System.ComponentModel;
 using System.Windows.Forms;
+using NoeticTools.DotNetWrappers;
+using Control=System.Windows.Forms.Control;
 
 
 namespace NoeticTools.Windows.Forms
@@ -39,6 +41,11 @@ namespace NoeticTools.Windows.Forms
 			Controls.Add(control);
 			control.Dock = DockStyle.Fill;
 		}
+
+        public void AddControl(IControl control)
+        {
+            AddControl(control.WrappedControl);
+        }
 
 		private void PlaceHolderControl_Load(object sender, System.EventArgs e)
 		{

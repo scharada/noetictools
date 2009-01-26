@@ -61,5 +61,10 @@ namespace NoeticTools.Docking
                 ((IResizable)Parent).FitHeight();
             }
         }
+
+        public Control WrappedControl
+        {
+            get { return this; }
+        }
     }
 }

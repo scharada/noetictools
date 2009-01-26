@@ -20,14 +20,14 @@
 
 #endregion
 
-using System.Windows.Forms;
+using NoeticTools.PlugIns.Menus;
 
 
 namespace NoeticTools.PlugIns
 {
 	public interface IViewController
 	{
-		Form Show();
+		void Show(IFormClosedListener formClosedListener);
 		void Close();
 	}
 }

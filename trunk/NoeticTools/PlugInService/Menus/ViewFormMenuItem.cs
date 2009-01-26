@@ -27,7 +27,7 @@ using NoeticTools.DotNetWrappers;
 
 namespace NoeticTools.PlugIns.Menus
 {
-	public class ViewFormMenuItem : IViewFormMenuItem
+	public class ViewFormMenuItem : IViewFormMenuItem, IFormClosedListener
 	{
 		private readonly IViewController viewController;
 		private readonly IToolStripMenuItem viewMenu;
@@ -71,15 +71,8 @@ namespace NoeticTools.PlugIns.Menus
 
 		private void ShowView()
 		{
-			Form view = viewController.Show();
-			view.Closed += view_Closed;
+			viewController.Show(this);
 			viewShown = true;
-			UpdateMenu();
-		}
-
-		private void view_Closed(object sender, EventArgs e)
-		{
-			viewShown = false;
 			UpdateMenu();
 		}
 
@@ -87,5 +80,11 @@ namespace NoeticTools.PlugIns.Menus
 		{
 			viewMenu.Checked = viewShown;
 		}
+
+	    void IFormClosedListener.FormClosed()
+	    {
+            viewShown = false;
+            UpdateMenu();
+        }
 	}
 }

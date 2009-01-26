@@ -55,6 +55,7 @@
     <Compile Include="IPlugInHost.cs" />
     <Compile Include="IPlugInHostServices.cs" />
     <Compile Include="IViewController.cs" />
+    <Compile Include="Menus\IFormClosedListener.cs" />
     <Compile Include="Menus\IToolStripMenuService.cs" />
     <Compile Include="Menus\IViewFormMenuItem.cs" />
     <Compile Include="Menus\ToolStripMenuService.cs" />
