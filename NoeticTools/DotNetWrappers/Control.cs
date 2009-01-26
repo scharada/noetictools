@@ -455,7 +455,12 @@ namespace NoeticTools.DotNetWrappers
 			set { control.ImeMode = value; }
 		}
 
-		public void ResetBindings()
+	    public System.Windows.Forms.Control WrappedControl
+	    {
+            get { return control; }
+	    }
+
+	    public void ResetBindings()
 		{
 			control.ResetBindings();
 		}
