@@ -28,70 +28,70 @@ namespace NoeticTools.DotNetWrappers
 {
 	public class ToolStripMenuItem : ToolStripDropDownItem, IToolStripMenuItem
 	{
-		private readonly System.Windows.Forms.ToolStripMenuItem item;
+		private readonly System.Windows.Forms.ToolStripMenuItem menuItem;
 
-		public ToolStripMenuItem(System.Windows.Forms.ToolStripMenuItem item)
-			: base(item)
+        public ToolStripMenuItem(System.Windows.Forms.ToolStripMenuItem menuItem)
+            : base(menuItem)
 		{
-			this.item = item;
+            this.menuItem = menuItem;
 		}
 
 		public static explicit operator System.Windows.Forms.ToolStripMenuItem(ToolStripMenuItem sourceItem)
 		{
-			return sourceItem.item;
+			return sourceItem.menuItem;
 		}
 
 		public bool Checked
 		{
-			get { return item.Checked; }
-			set { item.Checked = value; }
+			get { return menuItem.Checked; }
+			set { menuItem.Checked = value; }
 		}
 
 		public bool CheckOnClick
 		{
-			get { return item.CheckOnClick; }
-			set { item.CheckOnClick = value; }
+			get { return menuItem.CheckOnClick; }
+			set { menuItem.CheckOnClick = value; }
 		}
 
 		public CheckState CheckState
 		{
-			get { return item.CheckState; }
-			set { item.CheckState = value; }
+			get { return menuItem.CheckState; }
+			set { menuItem.CheckState = value; }
 		}
 
 		public Keys ShortcutKeys
 		{
-			get { return item.ShortcutKeys; }
-			set { item.ShortcutKeys = value; }
+			get { return menuItem.ShortcutKeys; }
+			set { menuItem.ShortcutKeys = value; }
 		}
 
 		public string ShortcutKeyDisplayString
 		{
-			get { return item.ShortcutKeyDisplayString; }
-			set { item.ShortcutKeyDisplayString = value; }
+			get { return menuItem.ShortcutKeyDisplayString; }
+			set { menuItem.ShortcutKeyDisplayString = value; }
 		}
 
 		public bool ShowShortcutKeys
 		{
-			get { return item.ShowShortcutKeys; }
-			set { item.ShowShortcutKeys = value; }
+			get { return menuItem.ShowShortcutKeys; }
+			set { menuItem.ShowShortcutKeys = value; }
 		}
 
 		public bool IsMdiWindowListEntry
 		{
-			get { return item.IsMdiWindowListEntry; }
+			get { return menuItem.IsMdiWindowListEntry; }
 		}
 
 		public event EventHandler CheckedChanged
 		{
-			add { item.CheckedChanged += value; }
-			remove { item.CheckedChanged -= value; }
+			add { menuItem.CheckedChanged += value; }
+			remove { menuItem.CheckedChanged -= value; }
 		}
 
 		public event EventHandler CheckStateChanged
 		{
-			add { item.CheckStateChanged += value; }
-			remove { item.CheckStateChanged -= value; }
+			add { menuItem.CheckStateChanged += value; }
+			remove { menuItem.CheckStateChanged -= value; }
 		}
 	}
 }
