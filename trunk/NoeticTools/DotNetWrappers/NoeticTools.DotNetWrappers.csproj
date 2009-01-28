@@ -40,6 +40,8 @@
       <Link>AssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="IListControl.cs" />
+    <Compile Include="Windows\Forms\Menu.cs" />
+    <Compile Include="Windows\Forms\MenuItem.cs" />
     <Compile Include="Windows\Forms\ComboBox.cs" />
     <Compile Include="Component.cs" />
     <Compile Include="Control.cs" />

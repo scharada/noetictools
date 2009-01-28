@@ -30,7 +30,7 @@ namespace NoeticTools.DotNetWrappers
 	{
 		private readonly System.Windows.Forms.ToolStripMenuItem menuItem;
 
-        public ToolStripMenuItem(System.Windows.Forms.ToolStripMenuItem menuItem)
+	    public ToolStripMenuItem(System.Windows.Forms.ToolStripMenuItem menuItem)
             : base(menuItem)
 		{
             this.menuItem = menuItem;
@@ -93,5 +93,5 @@ namespace NoeticTools.DotNetWrappers
 			add { menuItem.CheckStateChanged += value; }
 			remove { menuItem.CheckStateChanged -= value; }
 		}
-	}
+    }
 }
