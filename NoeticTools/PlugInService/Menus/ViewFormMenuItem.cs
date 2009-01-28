@@ -57,6 +57,7 @@ namespace NoeticTools.PlugIns.Menus
             {
                 ShowView();
             }
+
             UpdateMenu();
         }
 

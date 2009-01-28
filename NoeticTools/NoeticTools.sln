@@ -2,58 +2,122 @@
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.Windows.Forms", "Windows\Forms\NoeticTools.Windows.Forms.csproj", "{C99F3467-B989-4ED8-9600-29C3CC6FEF2D}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 	ProjectSection(ProjectDependencies) = postProject
 		{C687CD12-08C6-43E7-A231-AD956836C360} = {C687CD12-08C6-43E7-A231-AD956836C360}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.PlugInService", "PlugInService\NoeticTools.PlugInService.csproj", "{72489AD7-32A6-4EA2-B133-4E45CA972C94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.PlugIns", "PlugInService\NoeticTools.PlugIns.csproj", "{72489AD7-32A6-4EA2-B133-4E45CA972C94}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 	ProjectSection(ProjectDependencies) = postProject
 		{C687CD12-08C6-43E7-A231-AD956836C360} = {C687CD12-08C6-43E7-A231-AD956836C360}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.PlugInService.Tests", "PlugInService\Tests\NoeticTools.PlugInService.Tests.csproj", "{4BB4CD77-C1F4-49BE-971C-B30CBB18E79C}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.Html", "Html\NoeticTools.Html.csproj", "{C511E27B-F9F6-4376-8092-1B95B68BF670}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 	ProjectSection(ProjectDependencies) = postProject
 		{C687CD12-08C6-43E7-A231-AD956836C360} = {C687CD12-08C6-43E7-A231-AD956836C360}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.Html.Tests", "Html\Tests\NoeticTools.Html.Tests.csproj", "{8CB9BEC2-EA6E-471F-8BD9-77B110E9B1C1}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.NUnit.Extensions", "NUnit.Extensions\NoeticTools.NUnit.Extensions.csproj", "{060AC4AA-2C1B-4EDF-805B-5B066DCE0572}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 	ProjectSection(ProjectDependencies) = postProject
 		{C687CD12-08C6-43E7-A231-AD956836C360} = {C687CD12-08C6-43E7-A231-AD956836C360}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.DotNetWrappers", "DotNetWrappers\NoeticTools.DotNetWrappers.csproj", "{C3508E69-CC5F-49E3-AAC4-E907DE04EC49}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 	ProjectSection(ProjectDependencies) = postProject
 		{C687CD12-08C6-43E7-A231-AD956836C360} = {C687CD12-08C6-43E7-A231-AD956836C360}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.GoogleMaps", "GoogleMaps\NoeticTools.GoogleMaps.csproj", "{99E84516-6A45-4C04-A7C3-E7958D99ED26}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 	ProjectSection(ProjectDependencies) = postProject
 		{C687CD12-08C6-43E7-A231-AD956836C360} = {C687CD12-08C6-43E7-A231-AD956836C360}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.GoogleMaps.Tests", "GoogleMaps\Tests\NoeticTools.GoogleMaps.Tests.csproj", "{3EFDDF88-C876-466B-A298-964D2822D198}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.RSS", "RSSReader\NoeticTools.RSS.csproj", "{651022FD-65D6-42A9-94A0-CB2FD16DEB63}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 	ProjectSection(ProjectDependencies) = postProject
 		{C687CD12-08C6-43E7-A231-AD956836C360} = {C687CD12-08C6-43E7-A231-AD956836C360}
 		{C3508E69-CC5F-49E3-AAC4-E907DE04EC49} = {C3508E69-CC5F-49E3-AAC4-E907DE04EC49}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools..RSS.Tests", "RSSReader\Tests\NoeticTools..RSS.Tests.csproj", "{1ED6E1F4-34E9-47A3-B1F6-06C908BDB487}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.BuildInfo", "NoeticTools.BuildInfo\NoeticTools.BuildInfo.csproj", "{C687CD12-08C6-43E7-A231-AD956836C360}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.Utilities", "Utilities\NoeticTools.Utilities.csproj", "{9D26E490-FC24-40FD-84BB-D9310D504956}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.Utilities.Tests", "Utilities\Tests\NoeticTools.Utilities.Tests.csproj", "{E1A1FC15-D6BD-44AD-8EFB-82BC89981E96}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.Docking", "Docking\NoeticTools.Docking.csproj", "{DC2F5B77-D5C3-4411-87E5-5F40EA80CE94}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.Docking.Tests", "Docking\Tests\NoeticTools.Docking.Tests.csproj", "{691C137A-E767-4971-BDD9-2F8911511752}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

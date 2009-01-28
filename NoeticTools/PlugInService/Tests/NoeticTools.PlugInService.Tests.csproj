@@ -51,9 +51,9 @@
       <Project>{060AC4AA-2C1B-4EDF-805B-5B066DCE0572}</Project>
       <Name>NoeticTools.NUnit.Extensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NoeticTools.PlugInService.csproj">
+    <ProjectReference Include="..\NoeticTools.PlugIns.csproj">
       <Project>{72489AD7-32A6-4EA2-B133-4E45CA972C94}</Project>
-      <Name>NoeticTools.PlugInService</Name>
+      <Name>NoeticTools.PlugIns</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
