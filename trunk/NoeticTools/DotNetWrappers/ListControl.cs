@@ -30,6 +30,12 @@ namespace NoeticTools.DotNetWrappers
     {
         private readonly System.Windows.Forms.ListControl listControl;
 
+        public ListControl(System.Windows.Forms.ListControl listControl)
+            : base(listControl)
+        {
+            this.listControl = listControl;
+        }
+
         public object GetLifetimeService()
         {
             return listControl.GetLifetimeService();
@@ -196,12 +202,6 @@ namespace NoeticTools.DotNetWrappers
         {
             get { return listControl.SelectedValue; }
             set { listControl.SelectedValue = value; }
-        }
-
-        public ListControl(System.Windows.Forms.ListControl listControl)
-            : base(listControl)
-        {
-            this.listControl = listControl;
         }
     }
 }

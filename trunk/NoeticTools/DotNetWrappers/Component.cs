@@ -1,22 +1,20 @@
 #region Copyright
 
-/*---------------------------------------------------------------------------
- * The contents of this file are subject to the Mozilla Public License
- * Version 1.1 (the "License"); you may not use this file except in compliance
- * with the License. You may obtain a copy of the License at
- * 
- * http://www.mozilla.org/MPL/
- * 
- * Software distributed under the License is distributed on an "AS IS"
- * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
- * License for the specific language governing rights and limitations under 
- * the License.
- * 
- * The Initial Developer of the Original Code is Robert Smyth.
- * Portions created by Robert Smyth are Copyright (C) 2008.
- * 
- * All Rights Reserved.
- *---------------------------------------------------------------------------*/
+// The contents of this file are subject to the Mozilla Public License
+//  Version 1.1 (the "License"); you may not use this file except in compliance
+//  with the License. You may obtain a copy of the License at
+//  
+//  http://www.mozilla.org/MPL/
+//  
+//  Software distributed under the License is distributed on an "AS IS"
+//  basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+//  License for the specific language governing rights and limitations under 
+//  the License.
+//  
+//  The Initial Developer of the Original Code is Robert Smyth.
+//  Portions created by Robert Smyth are Copyright (C) 2008.
+//  
+//  All Rights Reserved.
 
 #endregion
 
@@ -26,40 +24,40 @@ using System.ComponentModel;
 
 namespace NoeticTools.DotNetWrappers
 {
-	public class Component : IComponent
-	{
-		private readonly System.ComponentModel.Component component;
+    public class Component : IComponent
+    {
+        private readonly System.ComponentModel.Component component;
 
-		public Component(System.ComponentModel.Component component)
-		{
-			this.component = component;
-		}
+        public Component(System.ComponentModel.Component component)
+        {
+            this.component = component;
+        }
 
-		public ISite Site
-		{
-			get { return component.Site; }
-			set { component.Site = value; }
-		}
+        public ISite Site
+        {
+            get { return component.Site; }
+            set { component.Site = value; }
+        }
 
-		public IContainer Container
-		{
-			get { return component.Container; }
-		}
+        public IContainer Container
+        {
+            get { return component.Container; }
+        }
 
-		public void Dispose()
-		{
-			component.Dispose();
-		}
+        public override string ToString()
+        {
+            return component.ToString();
+        }
 
-		public override string ToString()
-		{
-			return component.ToString();
-		}
+        public event EventHandler Disposed
+        {
+            add { component.Disposed += value; }
+            remove { component.Disposed -= value; }
+        }
 
-		public event EventHandler Disposed
-		{
-			add { component.Disposed += value; }
-			remove { component.Disposed -= value; }
-		}
-	}
+        public void Dispose()
+        {
+            component.Dispose();
+        }
+    }
 }
