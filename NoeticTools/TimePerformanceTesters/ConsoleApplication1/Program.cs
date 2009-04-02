@@ -48,7 +48,10 @@ namespace NoeticTools.TimersPerformanceTester
             {
                 var testers = new IPerformanceTester[]
                                   {
-                                      new SleepPerformanceTester(testResolution, new CountLimiter(numberOfSamples))
+                                      new SleepPerformanceTester(testResolution, new CountLimiter(numberOfSamples)),
+                                      new SystemThreadingTimerPerformanceTester(),
+                                      new SystemTimersTimerPerformanceTester(),
+                                      new SystemWindowsFormsTimerPerformanceTester(),
                                   };
 
                 foreach (var tester in testers)
