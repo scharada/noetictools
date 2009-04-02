@@ -80,7 +80,7 @@ namespace NoeticTools.TimersPerformanceTester
             var average_ms = totalTime.TotalMilliseconds/numberOfEvents;
 
             Console.WriteLine(
-                "\tThread.Sleep performance for {0,5:#.00} milliseconds: Average = {3,5:#.00}ms ({4,3:###}% latency). Min = {1,5:#.00}ms. Max = {2,5:#.00}ms.",
+                "\tSystem.Threading.Thread.Sleep performance for {0,5:#.00} milliseconds: Average = {3,5:#.00}ms ({4,3:###}% latency). Min = {1,5:#.00}ms. Max = {2,5:#.00}ms.",
                 testResolution.TotalMilliseconds,
                 minTime.TotalMilliseconds, maxTime.TotalMilliseconds, average_ms,
                  Math.Abs((testResolution.TotalMilliseconds - average_ms)/testResolution.TotalMilliseconds)*100);

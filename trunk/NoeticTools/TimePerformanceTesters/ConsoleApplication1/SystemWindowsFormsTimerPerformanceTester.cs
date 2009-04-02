@@ -18,10 +18,20 @@
 
 #endregion
 
+using System;
+
 
 namespace NoeticTools.TimersPerformanceTester
 {
-    public class SystemWindowsFormsTimerPerformanceTester
+    public class SystemWindowsFormsTimerPerformanceTester : IPerformanceTester
     {
+        public void Run()
+        {
+        }
+
+        public void ShowResults()
+        {
+            Console.WriteLine("\tSystem.Windows.Forms.Timer - not tested.");
+        }
     }
 }
